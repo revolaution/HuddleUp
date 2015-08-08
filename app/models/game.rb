@@ -3,4 +3,5 @@ class Game < ActiveRecord::Base
   has_many :participatings
   has_many :participants, through: :participatings
   belongs_to :sport
+  belongs_to :location
 end
