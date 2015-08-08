@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :created_games, class_name: "Game"
   has_many :participatings
   has_many :games, through: :participatings
+  belongs_to :location
 
   def self.find_or_create_from_auth_hash(auth_hash)
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
@@ -22,4 +23,5 @@ class User < ActiveRecord::Base
     @graph = Koala::Facebook::API.new(token)
     @graph.get_object("me?fields=email")
   end
+
 end

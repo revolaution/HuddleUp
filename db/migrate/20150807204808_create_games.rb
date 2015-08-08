@@ -7,7 +7,8 @@ class CreateGames < ActiveRecord::Migration
       t.references :sport
       t.datetime :start_at
       t.datetime :end_at
-      t.string :location
+      t.references :location
+      t.string :address
 
       t.timestamps null: false
     end
