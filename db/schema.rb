@@ -55,8 +55,9 @@ ActiveRecord::Schema.define(version: 20150808160355) do
     t.string   "name"
     t.string   "email"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "location_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users_sports", force: :cascade do |t|
