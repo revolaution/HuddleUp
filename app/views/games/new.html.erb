@@ -1,3 +1,30 @@
-<%= form_tag("/") do %>
-  <%= submit_tag("Make Game!") %>
+<%= form_for @game, url: "/locations/#{params[:location_id]}/sports/#{params[:sport_id]}/games" do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description%>
+  </p>
+
+  <p>
+    <%= f.label :max_number_of_participants %><br>
+    <%= f.number_field :max_number_of_participants%>
+  </p>
+
+  <p>
+    <%= f.label :start_at %><br>
+    <%= f.datetime_field :start_at%>
+  </p>
+
+  <p>
+    <%= f.label :end_at %><br>
+    <%= f.datetime_field :end_at%>
+  </p>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address%>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
