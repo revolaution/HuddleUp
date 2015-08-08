@@ -1,6 +1,6 @@
 class SportsController < ApplicationController
   def index
-    session[:user_id] = 1
+    # session[:user_id] = 1
     @sports = Sport.all
   end
 
