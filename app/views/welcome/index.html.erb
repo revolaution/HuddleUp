@@ -1,6 +1,6 @@
 <h1>Select A City</h1>
+
 <%= render partial: "shared/nav" %>
 <% @locations.each do |location| %>
-  <%= render partial: "locations", locals: {location: location} %>
+  <%= render partial: "locations/index", locals: {locations: @locations} %>
 <% end %>
-
