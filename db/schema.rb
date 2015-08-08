@@ -50,12 +50,13 @@ ActiveRecord::Schema.define(version: 20150808160355) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
     t.string   "name"
-    t.integer  "location_id"
-    t.string   "password_digest"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users_sports", force: :cascade do |t|
