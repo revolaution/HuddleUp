@@ -7,7 +7,7 @@
 <h1><%= link_to "Join Game", new_location_sport_game_participating_path(game_id: @game.id) %></h1>
 <h1>Users signed up for event:
   <ul>
-  <% @game.participants.each do |participant| %>
+  <% @participants.each do |participant| %>
     <li><%= render partial: "participant", locals: {participant: participant} %></li>
   <% end %>
   </ul>

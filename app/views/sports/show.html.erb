@@ -1,4 +1,4 @@
-<% @sport.games.select{|game| game.location == Location.find(params[:location_id])}.each do |game| %>
+<% @games.each do |game| %>
   <%= render partial: "games", locals: {game: game} %>
 <% end %>
 <%= link_to "Start New Game", new_location_sport_game_path(sport_id: @sport.id) %>
