@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,7 +8,17 @@ Rails.application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   # You can have the root of your site routed with "root"
+
   root 'users#index'
+
+  resources :sports do
+    resources :games do
+      resources :participatings
+    end
+  end
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -37,8 +37,16 @@ gem 'omniauth-facebook', '1.4.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Better Error Handling
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # Rspec testing
+  gem 'rspec-rails'
+  # Capybara for View handling
+  gem 'capybara'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
