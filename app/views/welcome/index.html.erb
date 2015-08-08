@@ -1,4 +1,2 @@
 <h1>Select A City</h1>
-<% @locations.each do |location| %>
-  <%= render partial: "locations", locals: {location: location} %>
-<% end %>
+<%= render partial: "locations/index", locals: {locations: @locations} %>
