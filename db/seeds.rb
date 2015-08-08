@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Location.destroy_all
+Sport.destroy_all
+Participating.destroy_all
+Game.destroy_all
+user_1 = User.first
 chicago = Location.create(name: "Chicago")
-sport1 = Sport.create(name: "Hockey", description: "theres a puck")
-sport2 = Sport.create(name: "Baseball", description: "boring as heck")
+sport_1 = Sport.create(name: "Hockey", description: "theres a puck")
+game_1 = Game.create(description: "Hockey Game 1", creator: user_1, sport: sport_1, location: chicago, address: "soldier field")
+Participating.create(participant: user_1, game: game_1)
