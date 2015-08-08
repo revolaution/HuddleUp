@@ -1,4 +1,4 @@
-# SquareUp
+# HuddleUp
 ## By Brian Fu, Ryan Lau, Michael Ramuta, Nicholas Stelter
 
 ### A social app focused on pick-up sports that will allow users to connect with others based on their selected sport and skill level
