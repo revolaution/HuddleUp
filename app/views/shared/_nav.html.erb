@@ -1,4 +1,4 @@
-<div id="user-widget">
+<nav>
   <% if current_user %>
     Welcome <strong><%= current_user.name %></strong>!
     <img src="<%= current_user.image %>">
@@ -6,4 +6,4 @@
   <% else %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
   <% end %>
-</div>
+</nav>
