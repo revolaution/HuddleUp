@@ -7,11 +7,12 @@
 <div class="row">
 	<div class="red lighten-1 col s12" id="city-select">
 		<h4 class="center-align">Select A City</h4>
-		<select class="browser-default">
+		<% @locations.each do |location| %>
+	        	<%= render partial: "locations/locations", locals: {location: location} %>
+	    <% end %>
+		<!-- <select class="browser-default">
 	        <option value="" disabled selected>Choose your option</option>
-	        <% @locations.each do |location| %>
-	        	<option value="1"><%= render partial: "locations", locals: {location: location} %></option>
-	        <% end %>
-	      </select>
+	        
+	      </select> -->
 	</div>
 </div>
