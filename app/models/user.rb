@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   has_many :created_games, class_name: "Game"
   has_many :participatings
   has_many :games, through: :participatings
+  belongs_to :location
 end
