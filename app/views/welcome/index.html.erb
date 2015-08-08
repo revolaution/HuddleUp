@@ -1,4 +1,17 @@
-<h1>Select A City</h1>
-<% @locations.each do |location| %>
-  <%= render partial: "locations", locals: {location: location} %>
-<% end %>
+<div class="row">
+	<div class="col s12 center-align">
+		<h4>Welcome to SquareUp!</h4>
+		<h6> We connect people through casual sports events in your local park</h6>
+	</div>
+</div>
+<div class="row">
+	<div class="red lighten-1 col s12" id="city-select">
+		<h4 class="center-align">Select A City</h4>
+		<select class="browser-default">
+	        <option value="" disabled selected>Choose your option</option>
+	        <% @locations.each do |location| %>
+	        	<option value="1"><%= render partial: "locations", locals: {location: location} %></option>
+	        <% end %>
+	      </select>
+	</div>
+</div>
