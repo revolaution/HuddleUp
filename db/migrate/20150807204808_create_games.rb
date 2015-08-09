@@ -5,10 +5,11 @@ class CreateGames < ActiveRecord::Migration
       t.string :description
       t.references :user
       t.references :sport
-      t.datetime :start_at
-      t.datetime :end_at
+      t.time :start_at
+      t.time :end_at
       t.references :location
       t.string :address
+      t.date :date
 
       t.timestamps null: false
     end
