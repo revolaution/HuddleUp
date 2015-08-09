@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user && game.not_full? %>
   <%= form_for participant, url: location_sport_game_participatings_path(@location, @sport, @game) do |f| %>
     <%= f.submit "Join Game" %>
   <% end %>

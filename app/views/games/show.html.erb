@@ -1,13 +1,13 @@
-<h1>Sport: <%= @game.sport.name %></h1>
+<h1>Sport: <%= @sport.name %></h1>
 <h1>Creator: <%= @game.creator.name %></h1>
 <h1>Description: <%= @game.description %></h1>
-<h1>Location: <%= @game.location.name %></h1>
+<h1>Location: <%= @location.name %></h1>
 <h1>Address: <%= @game.address %></h1>
-
+<h1>Looking for <%= @game.max_number_of_participants %> players</h1>
 <%= render partial: "edit_link", locals: {game: @game} %>
 
-<%= render partial: "join_game", locals: {participant: @participant} %>
+<%= render partial: "join_game", locals: {participant: @participant, game: @game} %>
 
-<%= render partial: "participants", locals: {participants: @participants} %>
+<%= render partial: "participants", locals: {participants: @participants, game: @game} %>
 
 

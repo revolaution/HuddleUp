@@ -1,7 +1,7 @@
-<h1>Users signed up for event:
+<h1><%= game.current_participants_count %> players signed up for event:</h1>
   <ul>
     <% participants.each do |participant| %>
       <%= render partial: "participant", locals: {participant: participant} %>
     <% end %>
   </ul>
-</h1>
+
