@@ -1,8 +1,8 @@
 class SportsController < ApplicationController
-  before_action :load_location, only: [:show]
+  before_action :load_location, :load_date, only: [:show]
+
 
   def show
-    @date = params[:date].to_date
     if @date == Date.today
       @date_display = "#{@date.to_s} (Today)"
     else
@@ -15,5 +15,13 @@ class SportsController < ApplicationController
   private
     def load_location
       @location = Location.find(params[:location_id])
+    end
+
+    def load_date
+      if params[:date]
+      @date = params[:date].to_date
+      else
+        @date = Date.today
+      end
     end
 end
