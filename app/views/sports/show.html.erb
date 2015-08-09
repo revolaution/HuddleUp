@@ -5,3 +5,7 @@
 <% end %>
 
 <%= render partial:"new_game_link" %>
+
+<%= form_for(@sport, url: location_sport_navigate_path(@location, @sport)) do |f| %>
+  <%= render partial: "navigate_form", locals: {f: f} %>
+<% end %>
