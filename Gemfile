@@ -36,6 +36,9 @@ gem 'omniauth-facebook', '1.4.0'
 
 # Facebook Graph API gem
 gem "koala", "~> 2.0"
+
+# Materialize Front-end Framework
+gem 'materialize-sass'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
