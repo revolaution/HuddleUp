@@ -18,5 +18,7 @@
 
   <%= yield %>
 
+  <%= render partial: "shared/footer" unless current_page?(root_url) %>
+
 </body>
 </html>
