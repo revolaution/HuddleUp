@@ -13,5 +13,3 @@ Game.destroy_all
 user_1 = User.first
 chicago = Location.create(name: "Chicago")
 sport_1 = Sport.create(name: "Hockey", description: "theres a puck")
-game_1 = Game.create(description: "Hockey Game 1", creator: user_1, sport: sport_1, location: chicago, address: "soldier field")
-Participating.create(participant: user_1, game: game_1)

@@ -10,12 +10,17 @@
 
 <div>
   <%= f.label :start_at %>
-  <%= f.datetime_field :start_at, value: @game.start_at %>
+  <%= f.time_field :start_at, value: Time.now.strftime("%I:%M") %>
 </div>
 
 <div>
   <%= f.label :end_at %>
-  <%= f.datetime_field :end_at, value: @game.end_at %>
+  <%= f.time_field :end_at, value: (Time.now + 2.hours).strftime("%I:%M") %>
+</div>
+
+<div>
+  <%= f.label :date %>
+  <%= f.date_field :date, value: Date.today %>
 </div>
 
 <div>
