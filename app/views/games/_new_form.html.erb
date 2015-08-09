@@ -25,7 +25,7 @@
 
 <div>
   <%= f.label :address %>
-  <%= f.text_field :address, value: @game.address %>
+  <%= f.text_field :address, id: "autocomplete", placeholder: "Enter your address", value: @game.address %>
 </div>
 
 <div>
