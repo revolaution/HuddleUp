@@ -1,9 +1,14 @@
 <nav>
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <img src="<%= current_user.image %>">
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
+  <div class = "nav-wrapper deep-orange">
+    <a href = "#" class = "brand-logo">Logo</a>
+    <ul id = "nav-mobile" class = "right hide-on-med-and-down">
+      <% if current_user %>
+        <li>Welcome <strong><%= current_user.name %></strong>!
+          <img src="<%= current_user.image %>"></li>
+        <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+      <% else %>
+          <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+      <% end %>
+    </ul>
+  </div>
 </nav>

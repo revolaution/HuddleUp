@@ -1,6 +1,31 @@
-<h1>Select A City</h1>
-
-<%= render partial: "shared/nav" %>
-<% @locations.each do |location| %>
-  <%= render partial: "locations/index", locals: {locations: @locations} %>
-<% end %>
+<!-- <div class="parallax-container">
+  <div class="parallax"><img src = "images/huddle.jpg"</div> -->
+    <!-- <h1>Select A City</h1> -->
+    <%# @locations.each do |location| %>
+      <%#= render partial: "locations/index", locals: {locations: @locations} %>
+    <%# end %>
+<!-- </div>
+ -->
+ <div class="parallax-container">
+  <div class="parallax"><img src="https://a248.e.akamai.net/f/248/9086/10h/origin-d4.scene7.com/is/image/Underarmour/lander_huddleup_primary_camhuddle_090914?wid=1600&fmt=jpg" class="responsive-img"></div>
+</div>
+<div class="section white">
+  <div class="row container">
+    <div class="description col s12 l6">
+      <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h5>
+    </div>
+    <div class="fb-login col s12 l6 center-align">
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    </div>
+    <div class="select-city col s12 l6 center-align">
+        <h4 class="header">Select A City</h4>
+        <% @locations.each do |location| %>
+          <%= render partial: "locations/index", locals: {locations: @locations} %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><img src="http://www.uu.edu/our/veneman/iraq03/november/FirstBatch/Huddle.jpg" class="responsive-img"></div>
+</div>
