@@ -4,8 +4,8 @@
 <h1>Location: <%= @game.location.name %></h1>
 <h1>Address: <%= @game.address %></h1>
 <!-- <div id="map-canvas"> -->
-	<iframe width="600" height="450" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDbNOAeojdGmUSaW8f3vaIpHlvx_Hgerck&q=Soldier+Field></iframe>
+<iframe width="600" height="450" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=<%=@game.address %>&key=AIzaSyDbNOAeojdGmUSaW8f3vaIpHlvx_Hgerck" allowfullscreen></iframe>
 <!-- </div> -->
 
 <%= render partial: "edit_link", locals: {game: @game} %>
