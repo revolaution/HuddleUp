@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
+  patch '/locations/:location_id/sports/:id/navigate' => 'sports#navigate', as: "location_sport_navigate"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
