@@ -1,13 +1,16 @@
-<h1>Sport: <%= @game.sport.name %></h1>
-<h1>Creator: <%= @game.creator.name %></h1>
-<h1>Description: <%= @game.description %></h1>
-<h1>Location: <%= @game.location.name %></h1>
-<h1>Address: <%= @game.address %></h1>
-
-<%= render partial: "edit_link", locals: {game: @game} %>
-
-<%= render partial: "join_game", locals: {participant: @participant} %>
-
-<%= render partial: "participants", locals: {participants: @participants} %>
-
-
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card-panel blue-grey darken-2">
+      <ul>
+        <li><h1>Sport: <%= @game.sport.name %></h1></li>
+        <li><h1>Creator: <%= @game.creator.name %></h1></li>
+        <li><h1>Description: <%= @game.description %></h1></li>
+        <li><h1>Location: <%= @game.location.name %></h1></li>
+        <li><h1>Address: <%= @game.address %></h1></li>
+        <li><%= render partial: "edit_link", locals: {game: @game} %><%= render partial: "join_game", locals: {participant: @participant} %></li>
+        <li></li>
+        <li><%= render partial: "participants", locals: {participants: @participants} %></li>
+      </ul>
+    </div>
+  </div>
+</div>
