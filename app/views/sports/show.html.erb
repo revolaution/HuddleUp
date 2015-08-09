@@ -1,4 +1,5 @@
 <% @games.each do |game| %>
   <%= render partial: "games", locals: {game: game} %>
 <% end %>
-<%= link_to "Start New Game", new_location_sport_game_path(@location, @sport) %>
+
+<%= render partial:"new_game_link" %>
