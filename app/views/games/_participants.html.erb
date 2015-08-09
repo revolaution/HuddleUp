@@ -1,7 +1,7 @@
 <h1>Users signed up for event:
   <ul>
-  <% participants.each do |participant| %>
-    <li><%= render partial: "participant", locals: {participant: participant} %></li>
-  <% end %>
+    <% participants.each do |participant| %>
+      <%= render partial: "participant", locals: {participant: participant} %>
+    <% end %>
   </ul>
 </h1>
