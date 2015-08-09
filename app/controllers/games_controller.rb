@@ -9,6 +9,7 @@ class GamesController < ApplicationController
   end
 
   def new
+    @date = params[:date]
     @game = Game.new
   end
 
