@@ -9,6 +9,7 @@ class GamesController < ApplicationController
   end
 
   def new
+    @date = params[:date]
     @game = Game.new
   end
 
@@ -17,7 +18,8 @@ class GamesController < ApplicationController
     @game.sport = @sport
     @game.location = @location
   	@game.creator = current_user
-  	if @game.save
+    if @game.save
+      @game.participatings.create(participant: current_user)
   		redirect_to location_sport_game_path(@location, @sport, @game)
   	else
   		render 'new'
@@ -39,7 +41,7 @@ class GamesController < ApplicationController
 
   private
   	def game_params
-  		params.require(:game).permit(:description, :max_number_of_participants, :start_at, :end_at, :address)
+  		params.require(:game).permit(:description, :max_number_of_participants, :start_at, :end_at, :address, :date)
   	end
 
     def load_location

@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 20150808160355) do
     t.string   "description"
     t.integer  "user_id"
     t.integer  "sport_id"
-    t.datetime "start_at"
-    t.datetime "end_at"
+    t.time     "start_at"
+    t.time     "end_at"
     t.integer  "location_id"
     t.string   "address"
+    t.date     "date"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
