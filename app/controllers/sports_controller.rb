@@ -1,11 +1,13 @@
 class SportsController < ApplicationController
-  def index
-    # session[:user_id] = 1
-    @sports = Sport.all
-  end
+  before_action :load_location, only: [:show]
 
   def show
     @sport = Sport.find(params[:id])
-    @games = @sport.games.select{|game| game.location == Location.find(params[:location_id])}
+    @games = @sport.games.select{|game| game.location == @location && game.sport == @sport}
   end
+
+  private
+    def load_location
+      @location = Location.find(params[:location_id])
+    end
 end
