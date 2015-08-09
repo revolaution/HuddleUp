@@ -1,3 +1,5 @@
-<%= form_for participant, url: location_sport_game_participatings_path(@location, @sport, @game) do |f| %>
-  <%= f.submit "Join Game" %>
+<% if current_user %>
+  <%= form_for participant, url: location_sport_game_participatings_path(@location, @sport, @game) do |f| %>
+    <%= f.submit "Join Game" %>
+  <% end %>
 <% end %>

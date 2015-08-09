@@ -17,7 +17,8 @@ class GamesController < ApplicationController
     @game.sport = @sport
     @game.location = @location
   	@game.creator = current_user
-  	if @game.save
+    if @game.save
+      @game.participatings.create(participant: current_user)
   		redirect_to location_sport_game_path(@location, @sport, @game)
   	else
   		render 'new'
