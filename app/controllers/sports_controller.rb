@@ -1,5 +1,5 @@
 class SportsController < ApplicationController
-  before_action :load_location, :load_date, only: [:show]
+  before_action :load_location, :load_date, only: [:show, :navigate]
 
 
   def show
@@ -10,6 +10,12 @@ class SportsController < ApplicationController
     end
     @sport = Sport.find(params[:id])
     @games = @sport.games.select{|game| game.location == @location && game.sport == @sport && game.date == @date}
+  end
+
+  def navigate
+    @sport = Sport.find(params[:id])
+    @new_date = navigate_params["new_date"]
+    redirect_to location_sport_path(@location, @sport, date: @new_date)
   end
 
   private
@@ -23,5 +29,9 @@ class SportsController < ApplicationController
       else
         @date = Date.today
       end
+    end
+
+    def navigate_params
+      params.require(:sport).permit(:new_date)
     end
 end
