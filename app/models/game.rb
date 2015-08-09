@@ -4,4 +4,12 @@ class Game < ActiveRecord::Base
   has_many :participants, through: :participatings
   belongs_to :sport
   belongs_to :location
+
+  def current_participants_count
+    self.participants.count
+  end
+
+  def not_full?
+    self.current_participants_count != self.max_number_of_participants
+  end
 end
