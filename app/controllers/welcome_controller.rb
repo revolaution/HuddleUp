@@ -3,4 +3,5 @@ class WelcomeController < ApplicationController
     # session[:user_id] = 1
     @locations = Location.all
   end
+
 end
