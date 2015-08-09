@@ -1,33 +1,42 @@
-<div>
-  <%= f.label :description %>
-  <%= f.text_field :description, value: @game.description %>
-</div>
+<div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="card-panel blue-grey darken-2">
+         <div>
+           <%= f.label :description %>
+           <%= f.text_field :description, value: @game.description %>
+         </div>
 
-<div>
-  <%= f.label :max_number_of_participants %>
-  <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
-</div>
+         <div>
+           <%= f.label :max_number_of_participants %>
+           <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
+         </div>
 
-<div>
-  <%= f.label :start_at %>
-  <%= f.time_field :start_at, value: Time.now.strftime("%H:%M") %>
-</div>
+         <div>
+           <%= f.label :start_at %>
+           <%= f.time_field :start_at, value: Time.now.strftime("%H:%M") %>
+         </div>
 
-<div>
-  <%= f.label :end_at %>
-  <%= f.time_field :end_at, value: (Time.now + 2.hours).strftime("%H:%M") %>
-</div>
+         <div>
+           <%= f.label :end_at %>
+           <%= f.time_field :end_at, value: (Time.now + 2.hours).strftime("%H:%M") %>
+         </div>
 
-<div>
-  <%= f.label :date %>
-  <%= f.date_field :date, value: @date %>
-</div>
+         <div>
+           <%= f.label :date %>
+           <%= f.date_field :date, value: @date %>
+         </div>
 
-<div>
-  <%= f.label :address %>
-  <%= f.text_field :address, value: @game.address %>
-</div>
+         <div>
+           <%= f.label :address %>
+           <%= f.text_field :address, value: @game.address %>
+         </div>
 
-<div>
-  <%= f.submit %>
-</div>
+         <div>
+          <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
+            <i class="icon-ok icon-white"></i> Create Game
+          <% end %>
+         </div>
+        </div>
+      </div>
+    </div>
+
