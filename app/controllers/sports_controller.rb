@@ -4,9 +4,9 @@ class SportsController < ApplicationController
 
   def show
     if @date == Date.today
-      @date_display = "#{@date.to_s} (Today)"
+      @date_display = "#{@date.strftime("%A, %d %b %Y")} (Today)"
     else
-      @date_display = @date.to_s
+      @date_display = @date.strftime("%A, %d %b %Y")
     end
     @games = @sport.games.select{|game| game.location == @location && game.sport == @sport && game.date == @date}
   end
