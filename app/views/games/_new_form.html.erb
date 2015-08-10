@@ -7,22 +7,22 @@
        </div>
 
        <div>
-         <%= f.label :max_number_of_participants%>
+         <%= f.label :max_number_of_participants %>
          <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
        </div>
 
        <div>
-         <%= f.label :start_at%>
+         <%= f.label :start_at %>
          <%= f.time_field :start_at, value: Time.now.strftime("%H:%M") %>
        </div>
 
        <div>
-         <%= f.label :end_at%>
+         <%= f.label :end_at %>
          <%= f.time_field :end_at, value: (Time.now + 2.hours).strftime("%H:%M") %>
        </div>
 
        <div>
-         <%= f.label :date%>
+         <%= f.label :date %>
          <%= f.date_field :date, value: @date %>
        </div>
 
