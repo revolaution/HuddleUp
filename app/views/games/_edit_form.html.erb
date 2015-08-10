@@ -26,18 +26,24 @@
        <%= f.date_field :date, value: @game.date %>
      </div>
 
-     <div>
-         <%= f.label :address %>
-         <%= f.text_field :address, id: "pac-input", style: "color: black; background-color:white; opacity:.8;", class: "control", placeholder: "Enter your address", value: @game.address %>
-       </div>
-       <div id="map-canvas"></div>
 
-     <div class="row">
+     <div>
+       <%= f.label :address %>
+       <%= f.text_field :address, id: "searchTextField", placeholder: "Enter your address", value: @game.address %>
+     </div>
+
+     <div class="row center-align">
       <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
         <i class="icon-ok icon-white"></i> Update Game
       <% end %>
       <%= link_to "Delete Game", location_sport_game_path(game.location, game.sport, game), method: :delete, class: "waves-effect waves-light btn" %>
     </div>
+    <div class="row">
+      <div class="col m6 offset-m2 center-align">
+        <div><%= render partial: "shared/map", locals: {game: @game} %></div>
+      </div>
+    </div>
+
   </div>
 </div>
 </div>

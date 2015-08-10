@@ -5,6 +5,11 @@ class Game < ActiveRecord::Base
   belongs_to :sport
   belongs_to :location
 
+  geocoded_by :address
+  acts_as_mappable :lat_column_name => :latitude,
+                  :lng_column_name => :longitude,
+                  :auto_geocode => true
+
   def current_participants_count
     self.participants.count
   end
