@@ -38,11 +38,6 @@
       <% end %>
       <%= link_to "Delete Game", location_sport_game_path(game.location, game.sport, game), method: :delete, class: "waves-effect waves-light btn" %>
     </div>
-    <div class="row">
-      <div class="col m6 offset-m2 center-align">
-        <div><%= render partial: "shared/map", locals: {game: @game} %></div>
-      </div>
-    </div>
 
   </div>
 </div>
