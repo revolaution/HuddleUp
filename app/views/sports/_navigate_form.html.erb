@@ -2,8 +2,7 @@
   <%= f.label :new_date %>
   <%= f.date_field :new_date, value: @date %>
 </div>
+
 <div>
-  <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
-    <i class="icon-ok icon-white"></i>Jump to Date
-  <% end %>
+  <%= f.submit "Jump To Date" %>
 </div>
