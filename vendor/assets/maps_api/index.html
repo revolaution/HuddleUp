@@ -8,7 +8,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
   <script type="text/javascript" src="app.js"></script>
 </head>
-<body onload="initialize()">
+<body >
   <div id="locationField">
     <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
   </div>
@@ -23,7 +23,7 @@
       <head>
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-        <script>
+        <script>  
             var autocomplete;
             function initialize() {
               autocomplete = new google.maps.places.Autocomplete(
