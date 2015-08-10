@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+- "2.2.1"
+addons:
+  postgresql: "9.3"
+before_script:
+- cp config/database.travis.yml config/database.yml
+- rake db:test:prepare
