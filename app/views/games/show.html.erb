@@ -1,15 +1,24 @@
-<h1>Sport: <%= @sport.name %></h1>
-<h1>Creator: <%= @game.creator.name %></h1>
-<h1>Description: <%= @game.description %></h1>
-<h1>Location: <%= @location.name %></h1>
-<h1>Looking for <%= @game.max_number_of_participants %> players</h1>
-<%= render partial: "edit_link", locals: {game: @game} %>
-
-<h1>Address: <%= @game.address %></h1>
-<%= render partial: "shared/map", locals: {game: @game} %>
-
-<%= render partial: "join_game", locals: {participant: @participant, game: @game} %>
-
-<%= render partial: "participants", locals: {participants: @participants, game: @game} %>
-
-
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card-panel blue-grey darken-2">
+      <ul>
+        <li><h3>Sport: <%= @game.sport.name %></h3></li>
+        <li><h3>Creator: <%= @game.creator.name %></h3></li>
+        <li><h3>Description: <%= @game.description %></h3></li>
+        <li><h3>Location: <%= @game.location.name %></h3></li>
+        <li><h3>Looking for <%= @game.max_number_of_participants %> players</h3></li>
+        <li><%= render partial: "participants", locals: {participants: @participants, game: @game} %></li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="game-buttons col m3"><%= render partial: "edit_link", locals: {game: @game} %></div>
+      <div class="game-buttons col m3"><%= render partial: "join_game", locals: {participant: @participant, game: @game} %></div>
+      <div class="game-buttons col m3 btn waves-effect waves-light"><%= link_to "Other #{@sport.name} Games", controller: "sports", action: "show", id: @sport, :class => "game-buttons col m3 btn waves-effect waves-light" %></div>
+    </div>
+  </div>
+  <div class="col m6">
+    <div class="card-panel blue-grey darken-2">
+      <div class="center-align"><%= render partial: "shared/map", locals: {game: @game} %></div>
+    </div>
+  </div>
+</div>
