@@ -8,3 +8,16 @@
 <% end %>
 
 <h3>Games Today</h3>
+<% @games_today.each do |game| %>
+  <%= render partial: "sports/games", locals: {game: game} %>
+<% end %>
+
+<h3>Games Created</h3>
+<% @games_created.each do |game| %>
+  <%= render partial: "sports/games", locals: {game: game} %>
+<% end %>
+
+<h3>Upcoming Games</h3>
+<% @games_upcoming.each do |game| %>
+  <%= render partial: "sports/games", locals: {game: game} %>
+<% end %>

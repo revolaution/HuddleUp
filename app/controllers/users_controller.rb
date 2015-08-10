@@ -4,8 +4,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @games_today = @user.games.select{|game| game.date == Date.today}
+    @games_created = @user.created_games
+    @games_upcoming = @user.games.select{|game| game.date > Date.today}
     @locations = Location.all
-    @games_today = @user.
   end
 
   def update
