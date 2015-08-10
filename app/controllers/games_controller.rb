@@ -14,7 +14,6 @@ class GamesController < ApplicationController
   end
 
   def create
-    p game_params
   	@game = Game.new(game_params)
     @game.sport = @sport
     @game.location = @location

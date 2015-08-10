@@ -9,8 +9,9 @@
         <li><h3>Looking for <%= @game.max_number_of_participants %> players</h3></li>
         <li><%= render partial: "participants", locals: {participants: @participants, game: @game} %></li>
       </ul>
-      <div class="game-buttons"><%= render partial: "edit_link", locals: {game: @game} %></div>
-      <div class="game-buttons"><%= render partial: "join_game", locals: {participant: @participant, game: @game} %></div>
+      <div class="game-buttons col m3"><%= render partial: "edit_link", locals: {game: @game} %></div>
+      <div class="game-buttons col m3"><%= render partial: "join_game", locals: {participant: @participant, game: @game} %></div>
+      <div class="game-buttons col m3 btn waves-effect waves-light"><%= link_to "Sport", controller: "sports", action: "show", id: @sport, :class => "game-buttons col m3 btn waves-effect waves-light" %></div>
     </div>
   </div>
   <div class="col m6">
