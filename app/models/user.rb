@@ -24,4 +24,22 @@ class User < ActiveRecord::Base
     @graph.get_object("me?fields=email")
   end
 
+  def games_today
+    sorted = self.games.select{|game| game.date == Date.today}
+    sort_games(sorted)
+  end
+
+  def games_created
+    sorted = self.created_games
+    sort_games(sorted)
+  end
+
+  def games_upcoming
+    sorted = self.games.select{|game| game.date > Date.today}
+    sort_games(sorted)
+  end
+
+  def sort_games(array)
+    array.sort{|a,b| b.available_space <=> a.available_space }
+  end
 end
