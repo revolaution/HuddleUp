@@ -7,7 +7,7 @@ class SportsController < ApplicationController
     else
       @date_display = @date.strftime("%A, %d %b %Y")
     end
-    @games = @sport.games.select{|game| game.location == @location && game.sport == @sport && game.date == @date}
+    @games = @sport.games.select{|game| game.location == @location && game.sport == @sport && game.date == @date}.sort{|a,b| b.available_space <=> a.available_space }
   end
 
   def navigate
