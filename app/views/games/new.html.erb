@@ -2,3 +2,10 @@
   <%= render partial: "new_form", locals: {f: f} %>
 <% end %>
 
+<% if @game.errors.any? %>
+  <ul>
+    <% @game.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>

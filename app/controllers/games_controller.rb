@@ -44,8 +44,11 @@ class GamesController < ApplicationController
 
   def update
     if valid_user
-      @game.update(game_params)
-      redirect_to_game(@location, @sport, @game)
+      if @game.update(game_params)
+        redirect_to_game(@location, @sport, @game)
+      else
+        render 'edit'
+      end
     else
       redirect_to location_sport_path(@location, @sport)
     end
