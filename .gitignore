@@ -11,3 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
+
+/config/oauth_keys.yml
