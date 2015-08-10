@@ -4,7 +4,7 @@ describe Game do
 	let(:soccer) {Sport.create(name: "Soccer!", description:"Kick a ball")}
 	let(:chi) {Location.create(name: "Michigan")}
 	let(:matt) {User.create(provider: "facebook", uid: "123123123", name: "McGreenBeats", email: "green@green.com", location: chi)}
-	let(:game) {Game.create(max_number_of_participants: 5, description: "Let's play", creator: matt, sport: soccer, start_at: 0500, end_at: 0600, location: chi, address: "north beach")}
+	let(:game) {Game.create(max_number_of_participants: 5, description: "Let's play", creator: :matt, sport: :soccer, start_at: "2000-01-01 10:15:00", end_at: "2000-01-01 12:15:00", location: :chi, address: "north beach")}
 
 	describe "#current_particpants_count" do
 		it "should return the total number of participants currently" do
