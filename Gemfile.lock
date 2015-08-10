@@ -68,8 +68,17 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+<<<<<<< HEAD
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
+=======
+    geocoder (1.2.9)
+    geokit (1.9.0)
+      multi_json (>= 1.3.2)
+    geokit-rails (2.1.0)
+      geokit (~> 1.5)
+      rails (>= 3.0)
+>>>>>>> 3a90929522075cff3f83858fa132060975113247
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.2)
@@ -207,6 +216,8 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   font-awesome-rails
+  geocoder
+  geokit-rails
   jbuilder (~> 2.0)
   jquery-rails
   koala (~> 2.0)
