@@ -16,8 +16,4 @@ class Game < ActiveRecord::Base
   def not_full?
     self.current_participants_count != self.max_number_of_participants
   end
-
-  def self.sort_games(location_id, sport_id)
-    self
-  end
 end
