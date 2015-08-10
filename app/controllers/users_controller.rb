@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
+  before_action :load_user, only: [:show, :update]
+
   def index
   end
 
   def show
-    @user = User.find(params[:id])
     @games_today = @user.games.select{|game| game.date == Date.today}
     @games_created = @user.created_games
     @games_upcoming = @user.games.select{|game| game.date > Date.today}
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     redirect_to @user unless @user == current_user
     @user.location = Location.find(city_params["location_id"])
     @user.save
@@ -21,5 +21,9 @@ class UsersController < ApplicationController
   private
   def city_params
     params.require(:user).permit(:location_id)
+  end
+
+  def load_user
+    @user = User.find(params[:id])
   end
 end
