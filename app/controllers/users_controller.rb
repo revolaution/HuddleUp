@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @games_today = @user.games.select{|game| game.date == Date.today}
-    @games_created = @user.created_games
-    @games_upcoming = @user.games.select{|game| game.date > Date.today}
+    @games_today = @user.games_today
+    @games_created = @user.games_created
+    @games_upcoming = @user.games_upcoming
     @locations = Location.all
   end
 
@@ -19,11 +19,14 @@ class UsersController < ApplicationController
   end
 
   private
-  def city_params
-    params.require(:user).permit(:location_id)
-  end
 
-  def load_user
-    @user = User.find(params[:id])
-  end
+
+
+    def city_params
+      params.require(:user).permit(:location_id)
+    end
+
+    def load_user
+      @user = User.find(params[:id])
+    end
 end
