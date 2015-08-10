@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Place Autocomplete</title>
@@ -8,7 +8,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
   <script type="text/javascript" src="app.js"></script>
 </head>
-<body onload="initialize()">
+<body >
   <div id="locationField">
     <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
   </div>
@@ -16,22 +16,23 @@
   <h1>Location:</h1>
   <div id="map-canvas"></div>
 </body>
-</html>
+</html> -->
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
     <html>
       <head>
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script type="text/javascript" src="app.js"></script>
         <script>
-            var autocomplete;
-            function initialize() {
-              autocomplete = new google.maps.places.Autocomplete(
-                  /** @type {HTMLInputElement} */(document.getElementById('autocomplete')),
-                  { types: ['geocode'] });
-              google.maps.event.addListener(autocomplete, 'place_changed', function() {
-              });
-            }
+            // var autocomplete;
+            // function initialize() {
+            //   autocomplete = new google.maps.places.Autocomplete(
+            //       /** @type {HTMLInputElement} */(document.getElementById('autocomplete')),
+            //       { types: ['geocode'] });
+            //   google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            //   });
+            // }
         </script>
       </head>
       <body onload="initialize()">
@@ -39,4 +40,4 @@
           <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
         </div>
       </body>
-    </html> -->
+    </html>
