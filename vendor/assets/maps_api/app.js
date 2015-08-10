@@ -1,5 +1,7 @@
   function initialize() {
 
+    // map.disableScrollWheelZoom();
+    
     // search bar no map
 
     var autocomplete;
@@ -12,8 +14,8 @@
   // search bar on map
 
     var mapOptions = {
-      center: new google.maps.LatLng(41.874152, -87.620806),
-      zoom: 15
+      center: new google.maps.LatLng(41.8369, -87.6847),
+      zoom: 12
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
