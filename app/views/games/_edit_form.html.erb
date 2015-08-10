@@ -1,44 +1,42 @@
 <div class="row">
   <div class="col s12 m6 offset-m3">
     <div class="card-panel blue-grey darken-2">
-     <div>
-       <%= f.label :description %>
-       <%= f.text_field :description, value: @game.description %>
-     </div>
-
-     <div>
-       <%= f.label :max_number_of_participants %>
-       <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
-     </div>
-
-     <div>
-       <%= f.label :start_at %>
-       <%= f.time_field :start_at, value: @game.start_at.strftime("%I:%M") %>
-     </div>
-
-     <div>
-       <%= f.label :end_at %>
-       <%= f.time_field :end_at, value: @game.end_at.strftime("%I:%M") %>
-     </div>
-
-     <div>
-       <%= f.label :date %>
-       <%= f.date_field :date, value: @game.date %>
-     </div>
-
-
-     <div>
-       <%= f.label :address %>
-       <%= f.text_field :address, id: "searchTextField", placeholder: "Enter your address", value: @game.address %>
-     </div>
-
-     <div class="row center-align">
-      <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
-        <i class="icon-ok icon-white"></i> Update Game
-      <% end %>
-      <%= link_to "Delete Game", location_sport_game_path(game.location, game.sport, game), method: :delete, class: "waves-effect waves-light btn" %>
+       <div>
+         <%= f.label :description %>
+         <%= f.text_field :description, value: @game.description %>
+       </div>
+  
+       <div>
+         <%= f.label :max_number_of_participants %>
+         <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
+       </div>
+  
+       <div>
+         <%= f.label :start_at %>
+         <%= f.time_field :start_at, value: @game.start_at.strftime("%I:%M") %>
+       </div>
+  
+       <div>
+         <%= f.label :end_at %>
+         <%= f.time_field :end_at, value: @game.end_at.strftime("%I:%M") %>
+       </div>
+  
+       <div>
+         <%= f.label :date %>
+         <%= f.date_field :date, value: @game.date %>
+       </div>
+  
+       <div>
+         <%= f.label :address %>
+         <%= f.text_field :address, id: "searchTextField", placeholder: "Enter your address", value: @game.address %>
+       </div>
+  
+       <div class="row center-align">
+        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
+          <i class="icon-ok icon-white"></i> Update Game
+        <% end %>
+        <%= link_to "Delete Game", location_sport_game_path(game.location, game.sport, game), method: :delete, class: "waves-effect waves-light btn" %>
+      </div>
     </div>
-
   </div>
-</div>
 </div>
