@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :update]
 
-  def index
-  end
-
   def show
     @games_today = @user.games_today
     @games_created = @user.games_created
@@ -19,8 +16,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-
 
     def city_params
       params.require(:user).permit(:location_id)
