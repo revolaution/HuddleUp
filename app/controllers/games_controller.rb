@@ -32,18 +32,18 @@ class GamesController < ApplicationController
   end
 
   def edit
-    redirect_to_sport(@location, @sport) unless valid_user
+    redirect_to_sport(@location, @sport) unless valid_creator
   end
 
   def destroy
-    if valid_user
+    if valid_creator
       @game.destroy
     end
     redirect_to_sport(@location, @sport)
   end
 
   def update
-    if valid_user
+    if valid_creator
       if @game.update(game_params)
         redirect_to_game(@location, @sport, @game)
       else
@@ -79,7 +79,7 @@ class GamesController < ApplicationController
       redirect_to location_sport_path(location, sport)
     end
 
-    def valid_user
+    def valid_creator
       current_user && current_user == @game.creator
     end
 end
