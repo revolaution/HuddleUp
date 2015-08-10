@@ -3,8 +3,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @locations = Location.all
     @user = User.find(params[:id])
+    @locations = Location.all
+    @games_today = @user.
   end
 
   def update
