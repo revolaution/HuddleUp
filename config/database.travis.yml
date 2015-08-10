@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: SquareUp_test
+  username: postgres
