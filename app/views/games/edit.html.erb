@@ -2,10 +2,4 @@
   <%= render partial:"edit_form", locals: {f: f, game: @game} %>
 <% end %>
 
-<% if @game.errors.any? %>
-  <ul>
-    <% @game.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render partial:"errors", locals: {game: @game} %>
