@@ -20,7 +20,7 @@
     <div class="select-city col s12 l6 center-align">
         <h4 class="header">Select A City</h4>
         <% @locations.each do |location| %>
-          <%= render partial: "locations/index", locals: {locations: @locations} %>
+          <%= render partial: "locations/location", locals: {location: location} %>
         <% end %>
     </div>
     </div>
