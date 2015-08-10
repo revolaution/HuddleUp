@@ -1,15 +1,15 @@
   function initialize() {
 
-    // map.disableScrollWheelZoom();
+    
     
     // search bar no map
 
-    var autocomplete;
-    autocomplete = new google.maps.places.Autocomplete(
-      /** @type {HTMLInputElement} */(document.getElementById('autocomplete')),
-      { types: ['geocode'] });
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    });
+    // var autocomplete;
+    // autocomplete = new google.maps.places.Autocomplete(
+    //   /** @type {HTMLInputElement} */(document.getElementById('autocomplete')),
+    //   { types: ['geocode'] });
+    // google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    // });
 
   // search bar on map
 
@@ -19,7 +19,7 @@
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-
+    map.setOptions({'scrollwheel': false});
     var input = /** @type {HTMLInputElement} */(
       document.getElementById('pac-input'));
 
