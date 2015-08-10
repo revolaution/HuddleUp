@@ -6,6 +6,9 @@
         <%= @date_display %>
         <%= link_to "->", location_sport_path(@location, @sport, date: @date + 1.day) %>
       </div>
+      <div class="row center-align">
+        <%= link_to "Jump To Today", location_sport_path(@location, @sport) %>
+      </div>
       <div class="row">
         <% @games.each do |game| %>
           <div class="col s12 m12 l6">

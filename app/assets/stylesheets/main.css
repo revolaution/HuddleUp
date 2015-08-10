@@ -15,6 +15,7 @@ html, body, #map-canvas, #map_container
   color: #fff;
 }
 
+
 #sport-show-table {
 
 }
@@ -33,4 +34,13 @@ html, body, #map-canvas, #map_container
 
 :-ms-input-placeholder {  
    color: white;  
+}
+
+body #landing-page{
+	height:100%;
+	background: url(huddle.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
