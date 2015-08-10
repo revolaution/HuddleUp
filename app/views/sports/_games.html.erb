@@ -1,1 +1,7 @@
 <%= link_to game.description, location_sport_game_path(game.location, game.sport, game) %>
+<ul>
+	<li>Max Players: <%= game.max_number_of_participants %></li>
+	<li>Start Time: <%= game.start_at %></li>
+	<li>End Time: <%= game.end_at %></li>
+	<li>Address: <%= game.address %></li>
+</ul>
