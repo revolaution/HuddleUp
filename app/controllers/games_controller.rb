@@ -9,7 +9,7 @@ class GamesController < ApplicationController
   end
 
   def new
-    redirect_to @sport unless current_user
+    redirect_to_sport(@location, @sport) unless current_user
     @date = params[:date]
     @game = Game.new
   end
