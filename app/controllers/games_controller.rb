@@ -12,6 +12,9 @@ class GamesController < ApplicationController
     redirect_to_sport(@location, @sport) unless current_user
     @date = params[:date]
     @game = Game.new
+    if request.xhr?
+      render 'new', layout: false
+    end
   end
 
   def create

@@ -2,20 +2,20 @@
   <div class="row">
     <div class="col s12 m12 l12">
       <div class="card-panel white">
-        <div class="row center-align">
+        <div class="row center-align calender">
           <% if current_user %>
             <%= render partial: "users_sports/form" %>
           <% end %>
         </div>
-        <div class="row center-align">
+        <div class="row center-align calender">
           <%= link_to "<-", location_sport_path(@location, @sport, date: @date - 1.day) %>
           <%= @date_display %>
           <%= link_to "->", location_sport_path(@location, @sport, date: @date + 1.day) %>
         </div>
-        <div class="row center-align">
+        <div class="row center-align calender">
           <%= link_to "Jump To Today", location_sport_path(@location, @sport) %>
         </div>
-        <div class="row">
+        <div class="row games">
           <% @games.each do |game| %>
             <div class="col s12 m12 l4">
               <div class="card grey">
@@ -27,16 +27,17 @@
               </div>
             <% end %>
         </div>
-        <div class="row">
+        <div class="row calender">
           <div class="col s12 m12 l12">
             <%= form_for(@sport, url: location_sport_navigate_path(@location, @sport)) do |f| %>
               <%= render partial: "navigate_form", locals: {f: f} %>
             <% end %>
           </div>
         </div>
-        <div class="row">
+        <div class="row" id="start-new-game">
           <%= render partial:"new_game_link" %>
         </div>
+        <div id="new-game-form"></div>
       </div>
     </div>
   </div>
