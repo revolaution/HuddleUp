@@ -1,15 +1,13 @@
 <table class="centered">
   <thead>
     <tr>
-      <th data-field="id">Name</th>
-      <th data-field="skill-level">Skill Level</th>
+      <th data-field="id">Players</th>
     </tr>
   </thead>
   <tbody>
     <% participants.each do |participant| %>
       <tr>
         <td><%= render partial: "participant", locals: {participant: participant} %></td>
-        <td>Beginner (hard-code placeholder)</td>
       </tr>
     <% end %>
   </tbody>
