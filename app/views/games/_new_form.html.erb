@@ -1,3 +1,4 @@
+<%= render partial: 'games/autocomplete_script' %>
 <div class="row">
   <div class="col s12 m6 offset-m3">
     <div class="card-panel black-text white">
@@ -13,7 +14,7 @@
 
        <div>
          <%= f.label :start_at %>
-         <%= f.time_field :start_at, value: Time.now.strftime("%H:%M") %>
+         <%= f.time_field :start_at, value: (Time.now + 30.minutes).strftime("%H:%M") %>
        </div>
 
        <div>

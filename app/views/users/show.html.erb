@@ -4,10 +4,15 @@
 			<div class="col m12">
 				<h4 class = "title"><img src = "<%= @user.image %>" class = "img-border"><%= @user.name %>'s Profile</h4>
 				<% if current_user == @user %>
-				  <p style = "text-decoration: underline;">Select City:
+				  <p style = "text-decoration: underline;">Select City:</p>
 				    <%= form_for @user do |f| %>
 				      <%= render partial: "city_form", locals: {f: f} %>
 				    <% end %>
+				  <p>
+				  	<%= link_to "Create Team", new_team_path %>
+				  </p>
+				  <p>
+				  	<%= render partial: "teams", locals: {teams: @teams} %>
 				  </p>
 				<% end %>
 			</div>

@@ -1,5 +1,7 @@
-<% if current_user %>
+<% if current_user && current_user.location %>
 	<%= link_to "SquareUp", location_path(current_user.location), class: "brand-logo deep-orange-text" %>
+<% elsif current_user %>
+  <%= link_to "SquareUp", user_path(current_user), class: "brand-logo deep-orange-text" %>
 <% else %>
 	<a href = "/" class = "brand-logo deep-orange-text">SquareUp</a>
 <% end %>

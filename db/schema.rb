@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810202019) do
+ActiveRecord::Schema.define(version: 20150811160745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
-    t.integer  "max_number_of_participants", null: false
-    t.string   "description",                null: false
-    t.integer  "user_id",                    null: false
-    t.integer  "sport_id",                   null: false
-    t.time     "start_at",                   null: false
-    t.time     "end_at",                     null: false
-    t.integer  "location_id",                null: false
-    t.string   "address",                    null: false
-    t.date     "date",                       null: false
+    t.integer  "max_number_of_participants"
+    t.string   "description"
+    t.integer  "user_id"
+    t.integer  "sport_id"
+    t.time     "start_at"
+    t.time     "end_at"
+    t.integer  "location_id"
+    t.string   "address"
+    t.date     "date"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.float    "latitude"
@@ -33,23 +33,37 @@ ActiveRecord::Schema.define(version: 20150810202019) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "team_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "participatings", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "game_id",    null: false
+    t.integer  "user_id"
+    t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "sports", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.string   "description", null: false
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,11 +78,11 @@ ActiveRecord::Schema.define(version: 20150810202019) do
   end
 
   create_table "users_sports", force: :cascade do |t|
-    t.integer  "user_id",                          null: false
-    t.integer  "sport_id",                         null: false
-    t.string   "skill_level", default: "Beginner"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.integer  "user_id"
+    t.integer  "sport_id"
+    t.string   "skill_level"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
