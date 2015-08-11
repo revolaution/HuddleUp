@@ -1,8 +1,15 @@
 class SessionsController < ApplicationController
   def create
     @user = User.find_or_create_from_auth_hash(auth_hash)
-    session[:user_id] = @user.id
-    redirect_to @user, notice: "Signed In"
+    if @user
+      Sport.all.each do |sport|
+        UsersSport.find_or_create_by(user: @user, sport: sport)
+      end
+      session[:user_id] = @user.id
+      redirect_to @user, notice: "Signed In"
+    else
+      redirect_to '/'
+    end
   end
 
   def destroy
