@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :participatings
   has_many :games, through: :participatings
   belongs_to :location
+  has_many :memberships
+  has_many :teams, through: :memberships
 
   def self.find_or_create_from_auth_hash(auth_hash)
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
