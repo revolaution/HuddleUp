@@ -19,9 +19,14 @@
             </div>
         </div>
         <div class="row">
-          <div class="game-buttons col m3"><%= render partial: "edit_link", locals: {game: @game} %></div>
-          <div class="game-buttons col m3"><%= render partial: "join_game", locals: {participant: @participant, game: @game} %></div>
-          <div class="game-buttons col m3 btn waves-effect waves-light deep-orange"><%= link_to "Back to #{@sport.name}", controller: "sports", action: "show", id: @sport, :class => "game-buttons col m3 btn waves-effect waves-light" %></div>
+          <table>
+            <tr class="col l12">
+              <td><div class="game-buttons"><%= render partial: "edit_link", locals: {game: @game} %></div></td>
+              <td><div class="game-buttons"><%= render partial: "join_game", locals: {participant: @participant, game: @game} %></div></td>
+              <td><%= link_to "Delete Game", location_sport_game_path(@game.location, @game.sport, @game), method: :delete, class: "waves-effect waves-light btn deep-orange" %></td>
+              <td><div class="game-buttons btn waves-effect waves-light deep-orange"><%= link_to "Back to #{@sport.name}", controller: "sports", action: "show", id: @sport, :class => "game-buttons btn waves-effect waves-light" %></div></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
