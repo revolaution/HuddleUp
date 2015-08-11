@@ -56,7 +56,7 @@ class GamesController < ApplicationController
 
   private
   	def game_params
-  		params.require(:game).permit(:description, :max_number_of_participants, :start_at, :end_at, :address, :date)
+  		params.require(:game).permit(:description, :max_number_of_participants, :start_at, :end_at, :address, :date, :difficulty)
   	end
 
     def load_location

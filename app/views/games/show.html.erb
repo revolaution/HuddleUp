@@ -8,6 +8,7 @@
                 <li><strong>Sport:</strong> <%= @game.sport.name %></li>
                 <li><strong>Creator:</strong> <%= @game.creator.name %></li>
                 <li><strong>Description:</strong> <%= @game.description %></li>
+                <li><strong>Difficutly:</strong> <%= @game.difficulty %></li>
                 <li><strong>Location:</strong> <%= @game.location.name %></li>
                 <li><strong>Looking for:</strong> <%= @game.max_number_of_participants %> players</li>
                 <li><%= render partial: "participants", locals: {participants: @participants, game: @game} %></li>
