@@ -12,9 +12,8 @@ Participating.destroy_all
 Game.destroy_all
 
 chicago = Location.create(name: "Chicago")
-sf = Location.create(name: "San Francisco")
+san_fran = Location.create(name: "San Fransisco")
 nyc = Location.create(name: "New York City")
-
 
 sport_1 = Sport.create(name: "Basketball", description: "Ex choro perfecto sed, ei laoreet atomorum convenire vim. Est soluta laoreet deterruisset ad. At sea paulo libris, id usu paulo simul, in mel oratio malorum delenit. Cu dicant philosophia cum. Ad eos oblique pertinacia.")
 sport_2 = Sport.create(name: "Volleyball", description: "Ex choro perfecto sed, ei laoreet atomorum convenire vim. Est soluta laoreet deterruisset ad. At sea paulo libris, id usu paulo simul, in mel oratio malorum delenit. Cu dicant philosophia cum. Ad eos oblique pertinacia.")
