@@ -10,7 +10,7 @@ class Game < ActiveRecord::Base
                   :lng_column_name => :longitude,
                   :auto_geocode => true
 
-  validates :max_number_of_participants, :description, :creator, :sport, :start_at, :end_at, :location, :address, :date, presence: true
+  validates :max_number_of_participants, :description, :difficulty, :creator, :sport, :start_at, :end_at, :location, :address, :date, presence: true
 
   validate :date_cannot_be_in_past
   validate :time_cannot_be_in_past

@@ -12,10 +12,10 @@
 				  <p>
 				  	<%= link_to "Create Team", new_team_path %>
 				  </p>
-				  <p>
-				  	<%= render partial: "teams", locals: {teams: @teams} %>
-				  </p>
 				<% end %>
+				<p>
+				  <%= render partial: "teams", locals: {teams: @teams} %>
+				 </p>
 			</div>
 		</div>
 		<div class = "row">

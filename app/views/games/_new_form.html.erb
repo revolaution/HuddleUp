@@ -8,6 +8,11 @@
        </div>
 
        <div>
+         <%= f.label :difficulty %>
+         <%= f.select :difficulty, ['Beginner', 'Intermediate', 'Advanced'], {}, {:class => 'browser-default'} %>
+       </div>
+
+       <div>
          <%= f.label :max_number_of_participants %>
          <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
        </div>
