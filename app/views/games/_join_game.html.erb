@@ -1,4 +1,4 @@
-<% if current_user && game.not_full? %>
+<% if current_user && game.not_full? && !game.participants.include?(current_user) %>
   <%= form_for participant, url: location_sport_game_participatings_path(@location, @sport, @game) do |f| %>
     <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
       <i class="icon-ok icon-white"></i>Join Game
