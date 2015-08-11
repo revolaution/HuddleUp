@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   resources :locations, only: [:show] do
     resources :sports, only: [:show] do
+      resources :users_sports
       resources :games, except: [:index] do
         resources :participatings, only: [:create ]
       end

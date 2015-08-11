@@ -1,0 +1,2 @@
+<%= f.collection_select(:users_sport_id, UsersSport.all, :id, :skill_level, {}, {:class => 'browser-default', :selected => @user.users_sport_id}) %>
+<%= f.submit "Select City" %>
