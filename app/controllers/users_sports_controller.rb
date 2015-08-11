@@ -1,6 +1,4 @@
 class UsersSportsController < ApplicationController
-  def index
-  end
 
   def change_skill
     @location = Location.find(params[:location_id])
