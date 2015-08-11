@@ -19,7 +19,7 @@
 
        <div>
          <%= f.label :start_at %>
-         <%= f.time_field :start_at, value: Time.now.strftime("%H:%M") %>
+         <%= f.time_field :start_at, value: (Time.now + 30.minutes).strftime("%H:%M") %>
        </div>
 
        <div>
