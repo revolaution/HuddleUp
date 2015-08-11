@@ -51,11 +51,11 @@ body #landing-page{
 	height:100%;
 
 }
-/*#city-submit
+.hide
 {
 	display: none;
 }
-*/
+
 .game-title
 {
 	color:#d84315;
@@ -88,4 +88,8 @@ body #landing-page{
 .game-buttons
 {
 	color: #ff5722;
+}
+.input-size
+{
+	width: 250px;
 }

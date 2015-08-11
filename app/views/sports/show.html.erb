@@ -8,14 +8,23 @@
           <% end %>
         </div>
         <div class="row center-align">
-          <%= link_to "<-", location_sport_path(@location, @sport, date: @date - 1.day) %>
-          <%= @date_display %>
-          <%= link_to "->", location_sport_path(@location, @sport, date: @date + 1.day) %>
+          <div class="col s12 m12 l12">
+            <%= link_to "<-", location_sport_path(@location, @sport, date: @date - 1.day) %>
+            <%= @date_display %>
+            <%= link_to "->", location_sport_path(@location, @sport, date: @date + 1.day) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m12 l12 offset-l4">
+            <%= form_for(@sport, url: location_sport_navigate_path(@location, @sport)) do |f| %>
+              <%= render partial: "navigate_form", locals: {f: f} %>
+            <% end %>
+          </div>
         </div>
         <div class="row center-align">
           <%= link_to "Jump To Today", location_sport_path(@location, @sport) %>
         </div>
-        <div class="row">
+        <div class="row center-align">
           <% @games.each do |game| %>
             <div class="col s12 m12 l4">
               <div class="card grey">
@@ -26,13 +35,6 @@
                 </div>
               </div>
             <% end %>
-        </div>
-        <div class="row">
-          <div class="col s12 m12 l12">
-            <%= form_for(@sport, url: location_sport_navigate_path(@location, @sport)) do |f| %>
-              <%= render partial: "navigate_form", locals: {f: f} %>
-            <% end %>
-          </div>
         </div>
         <div class="row">
           <%= render partial:"new_game_link" %>
