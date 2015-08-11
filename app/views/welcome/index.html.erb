@@ -9,7 +9,7 @@
       <div class="city-login col s12 l6 valign center-align">
           <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "waves-effect waves-light btn blue darken-2" %>
           <h5 class="header">or</h5>
-          <h4 class="header">Select A City</h4>
+          <h4 class="header">Find sports in your city</h4>
           <% @locations.each do |location| %>
           <%= render partial: "locations/location", locals: {location: location} %><span style="color:#ff5722;">|</span>
           <% end %>
