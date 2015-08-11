@@ -93,3 +93,9 @@ body #landing-page{
 {
 	width: 250px;
 }
+
+.error-style
+{
+	text-align:center;
+	color:red;
+}

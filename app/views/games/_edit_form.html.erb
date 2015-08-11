@@ -37,10 +37,10 @@
        </div>
 
        <div class="row center-align">
-        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn deep-orange") do %>
+        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn deep-orange", onclick: "Materialize.toast('Game Updated', 4000, 'green')") do %>
           <i class="icon-ok icon-white"></i> Update Game
         <% end %>
-        <%= link_to "Delete Game", location_sport_game_path(game.location, game.sport, game), method: :delete, class: "waves-effect waves-light btn deep-orange" %>
+        <%= link_to "Delete Game", location_sport_game_path(game.location, game.sport, game), method: :delete, class: "waves-effect waves-light btn deep-orange", onclick: "Materialize.toast('Game Deleted', 4000, 'red')" %>
       </div>
     </div>
   </div>

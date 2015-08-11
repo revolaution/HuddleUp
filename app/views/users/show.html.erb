@@ -1,7 +1,7 @@
 <div class = "container">
 	<div class="card white profile">
 		<div class = "row">
-			<div class="col m12">
+			<div class="col l12">
 				<h4 class = "title"><img src = "<%= @user.image %>" class = "img-border"><%= @user.name %>'s Profile</h4>
 				<% if current_user == @user %>
 				  <p style = "text-decoration: underline;">Select City:</p>
@@ -18,36 +18,28 @@
 			</div>
 		</div>
 		<div class = "row">
-			<div class="col l4">
-				<div class="card grey">
-	            	<div class="card-content white-text">
-						<h4>Games Today</h4>
-						<% @games_today.each do |game| %>
-						  <%= render partial: "sports/games", locals: {game: game} %>
-						<% end %>
-					</div>
-				</div>
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#today">Games Today</a></li>
+					<li class="tab col s3"><a href="#created">Games Created</a></li>
+					<li class="tab col s3"><a href="#upcoming">Upcoming Games</a></li>
+				</ul>
 			</div>
-			<div class="col l4">
-				<div class="card grey">
-	            	<div class="card-content white-text">
-						<h4>Games Created</h4>
-						<% @games_created.each do |game| %>
-						  <%= render partial: "sports/games", locals: {game: game} %>
-						<% end %>
-					</div>
+				<div id="today" class="col s12">
+					<% @games_today.each do |game| %>
+					  <%= render partial: "sports/games", locals: {game: game} %>
+					<% end %>
 				</div>
-			</div>
-			<div class="col l4">
-				<div class="card grey">
-	            	<div class="card-content white-text">
-						<h4>Upcoming Games</h4>
-						<% @games_upcoming.each do |game| %>
-						  <%= render partial: "sports/games", locals: {game: game} %>
-						<% end %>
-					</div>
+				<div id="created" class="col s12">
+					<% @games_created.each do |game| %>
+					  <%= render partial: "sports/games", locals: {game: game} %>
+					<% end %>
 				</div>
-			</div>
+				<div id="upcoming" class="col s12">
+					<% @games_upcoming.each do |game| %>
+					  <%= render partial: "sports/games", locals: {game: game} %>
+					<% end %>
+				</div>
 		</div>
 	</div>
 </div>
