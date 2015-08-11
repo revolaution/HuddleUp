@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card-panel black-text white">
+       <div>
+         <%= f.label :name %>
+         <%= f.text_field :name, value: @team.name %>
+       </div>
+
+       <div>
+        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
+        <i class="icon-ok icon-white"></i> Create Team
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

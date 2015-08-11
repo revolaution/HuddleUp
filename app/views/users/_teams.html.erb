@@ -1,0 +1,6 @@
+<h5>Teams</h5>
+<ul>
+  <% teams.each do |team| %>
+    <%= link_to team.name, show_team_path(team) %>
+  <% end %>
+</ul>
