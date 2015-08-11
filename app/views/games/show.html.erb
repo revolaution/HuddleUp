@@ -5,9 +5,10 @@
           <div class="row">
             <div class="col s12 m12 l6">
               <ul class = "game-show-info">
-                <li><strong>Sport:</strong> <%= @game.sport.name %></li>
-                <li><strong>Creator:</strong> <%= @game.creator.name %></li>
+                <li><strong>Sport:</strong> <%= link_to @game.sport.name, location_sport_path(@location, @game) %></li>
+                <li><strong>Creator:</strong> <%= link_to @game.creator.name, @game.creator %></li>
                 <li><strong>Description:</strong> <%= @game.description %></li>
+                <li><strong>Difficutly:</strong> <%= @game.difficulty %></li>
                 <li><strong>Location:</strong> <%= @game.location.name %></li>
                 <li><strong>Looking for:</strong> <%= @game.max_number_of_participants %> players</li>
                 <li><%= render partial: "participants", locals: {participants: @participants, game: @game} %></li>

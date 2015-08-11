@@ -1,5 +1,5 @@
 <h1>Team Name: <%= @team.name %></h1>
-<p>Team Captain: <%= @team.creator.name %></p>
+<p>Team Captain: <%= link_to @team.creator.name, @team.creator %></p>
 <p>Team Members:
   <ul>
     <% @members.each do |member| %>
