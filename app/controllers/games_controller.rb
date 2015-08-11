@@ -9,34 +9,49 @@ class GamesController < ApplicationController
   end
 
   def new
+    redirect_to_sport(@location, @sport) unless current_user
     @date = params[:date]
     @game = Game.new
   end
 
   def create
-  	@game = Game.new(game_params)
-    @game.sport = @sport
-    @game.location = @location
-  	@game.creator = current_user
-    if @game.save
-      @game.participatings.create(participant: current_user)
-  		redirect_to location_sport_game_path(@location, @sport, @game)
-  	else
-  		render 'new'
-  	end
+    if current_user
+    	@game = Game.new(game_params)
+      @game.sport = @sport
+      @game.location = @location
+    	@game.creator = current_user
+      if @game.save
+        @game.participatings.create(participant: current_user)
+    		redirect_to_game(@location, @sport, @game)
+    	else
+    		render 'new'
+    	end
+    else
+      redirect_to_sport(@location, @sport)
+    end
   end
 
   def edit
+    redirect_to_sport(@location, @sport) unless valid_creator
   end
 
   def destroy
-    @game.destroy
-    redirect_to location_sport_path(@location, @sport)
+    if valid_creator
+      @game.destroy
+    end
+    redirect_to_sport(@location, @sport)
   end
 
   def update
-    @game.update(game_params)
-    redirect_to location_sport_game_path(@location, @sport, @game)
+    if valid_creator
+      if @game.update(game_params)
+        redirect_to_game(@location, @sport, @game)
+      else
+        render 'edit'
+      end
+    else
+      redirect_to location_sport_path(@location, @sport)
+    end
   end
 
   private
@@ -54,5 +69,17 @@ class GamesController < ApplicationController
 
     def load_game
       @game = Game.find(params[:id])
+    end
+
+    def redirect_to_game(location, sport, game)
+      redirect_to location_sport_game_path(location, sport, game)
+    end
+
+    def redirect_to_sport(location, sport)
+      redirect_to location_sport_path(location, sport)
+    end
+
+    def valid_creator
+      current_user && current_user == @game.creator
     end
 end

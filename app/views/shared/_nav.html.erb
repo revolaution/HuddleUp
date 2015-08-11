@@ -3,7 +3,7 @@
     <a href = "/" class = "brand-logo">SquareUp</a>
     <ul id = "nav-mobile" class = "right hide-on-med-and-down">
       <% if current_user %>
-        <li><a href="/users/<%= current_user.id %>">Welcome <strong><%= current_user.name %></strong>!</a></li>
+        <li><a href="/users/<%= current_user.id %>">Welcome, <strong><%= current_user.name %></strong>!</a></li>
         <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
       <% else %>
           <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>

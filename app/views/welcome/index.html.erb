@@ -1,28 +1,28 @@
 <!-- <div class="parallax-container">
-  <div class="parallax"><img src="https://a248.e.akamai.net/f/248/9086/10h/origin-d4.scene7.com/is/image/Underarmour/lander_huddleup_primary_camhuddle_090914?wid=1600&fmt=jpg" class="responsive-img"></div>
+  <div class="parallax"><img src="https://a248.e.akamai.net/f/248/9086/10h/origin-d4.scene7.com/is/image/Underarmour/lander_huddleup_primary_camhuddle_090914?wid=1600&fmt=jpg" class="responsive-img"></div> 
 </div> -->
 <div id = "landing-page">  
-  <div class="valign-wrapper">
-    <div class="row container valign">
-      <div class="description col s12 l6">
-          <h5 style>  .</h5>
-          <h5 style>Find a again.</h5>
-          <h5 style>Find a again.</h5>
+  <div class="container page-align">
+    <div class="row valign-wrapper page-align center-align">
+      <div class="description col s12 l6 valign">
+        <!-- <div class=" container"> -->
+          <h4>Select a city.</h4>
+          <h4>Find a game.</h4>
+          <h4 style="color:#ff5722;">Square Up.</h4>
+        <!-- </div> -->
       </div>
-
-       
-        <div class="col s12 l6 right-align">
+      <div class="city-login col s12 l6 valign center-align">
+        <!-- <div class="container"> -->
           <%= link_to "Sign up with Facebook", "/auth/facebook", id: "sign_in", class: "waves-effect waves-light btn blue darken-2" %>
           <h4 class="header">Select A City</h4>
           <% @locations.each do |location| %>
-            <%= render partial: "locations/location", locals: {location: location} %>
+          <%= render partial: "locations/location", locals: {location: location} %> |
           <% end %>
-        </div>
+        <!-- </div> -->
       </div>
+    </div>
   </div>
 </div>
- <!--  </div>
-</div> -->
 <!-- <div class="parallax-container">
   <div class="parallax"><img src="http://www.uu.edu/our/veneman/iraq03/november/FirstBatch/Huddle.jpg" class="responsive-img"></div>
 </div>

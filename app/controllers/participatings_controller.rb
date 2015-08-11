@@ -2,8 +2,12 @@ class ParticipatingsController < ApplicationController
   before_action :load_location, :load_sport, :load_game
 
   def create
-    Participating.create(participant: current_user, game: @game)
-    redirect_to location_sport_game_path(@location, @sport, @game)
+    if @game.participants.include?(current_user)
+      redirect_to :back
+    else
+      Participating.create(participant: current_user, game: @game)
+      redirect_to location_sport_game_path(@location, @sport, @game)
+    end
   end
 
   private
