@@ -3,7 +3,7 @@ class SportsController < ApplicationController
 
   def show
     if current_user
-      @skill = current_user.users_sports.select{|users_sport| users_sport.sport == @sport}[0].skill_level
+      @users_sport = current_user.users_sports.select{|users_sport| users_sport.sport == @sport}.first
     end
     if @date == Date.today
       @date_display = "#{@date.strftime("%A, %d %b %Y")} (Today)"

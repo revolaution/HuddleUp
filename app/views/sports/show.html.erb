@@ -3,7 +3,7 @@
     <div class="card-panel blue-grey darken-2">
       <div class="row center-align">
         <% if current_user %>
-          Skill Level: <%= @skill %>
+          <%= render partial: "users_sports/form" %>
         <% end %>
       </div>
       <div class="row center-align">

@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   resources :locations, only: [:show] do
     resources :sports, only: [:show] do
-      resources :users_sports
       resources :games, except: [:index] do
         resources :participatings, only: [:create ]
       end
@@ -22,5 +21,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update]
 
   patch '/locations/:location_id/sports/:id/navigate' => 'sports#navigate', as: "location_sport_navigate"
-
+  patch '/locations/:location_id/sports/:id/skill' => 'users_sports#change_skill', as: 'location_sport_skill'
 end

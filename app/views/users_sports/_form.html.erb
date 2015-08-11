@@ -1,2 +1,4 @@
-<%= f.collection_select(:users_sport_id, UsersSport.all, :id, :skill_level, {}, {:class => 'browser-default', :selected => @user.users_sport_id}) %>
-<%= f.submit "Select City" %>
+<%= form_for(@users_sport, url: location_sport_skill_path(@location, @sport)) do |f| %>
+  <%= f.select :skill_level, ['Beginner', 'Intermediate', 'Pro'], {}, {:class => 'browser-default'} %>
+  <%= f.submit "Change Skill" %>
+<% end %>
