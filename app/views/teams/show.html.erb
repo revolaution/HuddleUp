@@ -1,0 +1,9 @@
+<h1>Team Name: <%= @team.name %></h1>
+<p>Team Captain: <%= @team.creator.name %></p>
+<p>Team Members:
+  <ul>
+    <% @members.each do |member| %>
+      <%= render partial:"members", locals: {member: member} %>
+    <% end %>
+  </ul>
+</p>
