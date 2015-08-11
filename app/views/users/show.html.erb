@@ -1,23 +1,48 @@
-<h3><%= @user.name %>!</h3>
-<% if current_user == @user %>
-  <p>City:
-    <%= form_for @user do |f| %>
-      <%= render partial: "city_form", locals: {f: f} %>
-    <% end %>
-  </p>
-<% end %>
-
-<h3>Games Today</h3>
-<% @games_today.each do |game| %>
-  <%= render partial: "sports/games", locals: {game: game} %>
-<% end %>
-
-<h3>Games Created</h3>
-<% @games_created.each do |game| %>
-  <%= render partial: "sports/games", locals: {game: game} %>
-<% end %>
-
-<h3>Upcoming Games</h3>
-<% @games_upcoming.each do |game| %>
-  <%= render partial: "sports/games", locals: {game: game} %>
-<% end %>
+<div class = "container">
+	<div class="card white profile">
+		<div class = "row">
+			<div class="col m12">
+				<h4 class = "title"><img src = "<%= @user.image %>" class = "img-border"><%= @user.name %>'s Profile</h4>
+				<% if current_user == @user %>
+				  <p style = "text-decoration: underline;">Select City:
+				    <%= form_for @user do |f| %>
+				      <%= render partial: "city_form", locals: {f: f} %>
+				    <% end %>
+				  </p>
+				<% end %>
+			</div>
+		</div>
+		<div class = "row">
+			<div class="col l4">
+				<div class="card grey">
+	            	<div class="card-content white-text">
+						<h4>Games Today</h4>
+						<% @games_today.each do |game| %>
+						  <%= render partial: "sports/games", locals: {game: game} %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<div class="col l4">
+				<div class="card grey">
+	            	<div class="card-content white-text">
+						<h4>Games Created</h4>
+						<% @games_created.each do |game| %>
+						  <%= render partial: "sports/games", locals: {game: game} %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<div class="col l4">
+				<div class="card grey">
+	            	<div class="card-content white-text">
+						<h4>Upcoming Games</h4>
+						<% @games_upcoming.each do |game| %>
+						  <%= render partial: "sports/games", locals: {game: game} %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

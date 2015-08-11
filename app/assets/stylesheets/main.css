@@ -1,23 +1,15 @@
-html, body, #map-canvas, #map_container
+html, body
 {
-	   margin: 0;
-	   padding: 0;
-	   height: 100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
-#map-canvas
-{
-	height:500px;
-	width:100%;
-	margin-bottom: 15px;
-}
+
 
 .game-buttons a {
   color: #fff;
 }
 
-#sport-show-table {
-
-}
 
 ::-webkit-input-placeholder {
    color: white;
@@ -31,6 +23,69 @@ html, body, #map-canvas, #map_container
    color: white;
 }
 
-:-ms-input-placeholder {
-   color: white;
+:-ms-input-placeholder {  
+   color: white;  
+}
+
+body #landing-page{
+	height:100%;
+	background: url(huddle.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.description, .header, .location-links
+{
+	color:white;
+}
+
+.location-links:hover
+{
+	color: #ff5722;
+}
+
+.page-align
+{
+	height:100%;
+
+}
+/*#city-submit
+{
+	display: none;
+}
+*/
+.game-title
+{
+	color:#d84315;
+	font-size: 18px;
+}
+.game-title:hover
+{
+	color:#ff5722;
+}
+
+.game-info
+{
+	font-size: 16px;
+}
+
+.game-show-info
+{
+	font-size: 24px;
+}
+.img-border
+{
+	border: 3px solid #ff5722;
+	margin-right: 10px;
+}
+.profile
+{
+	padding:35px;
+}
+
+.game-buttons
+{
+	color: #ff5722;
 }
