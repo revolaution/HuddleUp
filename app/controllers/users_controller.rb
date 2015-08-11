@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:show, :update]
 
   def show
+    @teams = @user.teams
     @games_today = @user.games_today
     @games_created = @user.games_created
     @games_upcoming = @user.games_upcoming
