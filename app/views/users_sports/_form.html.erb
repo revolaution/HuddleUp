@@ -1,4 +1,5 @@
+<h5>Current Skill Level</h5>
 <%= form_for(@users_sport, url: location_sport_skill_path(@location, @sport)) do |f| %>
-  <%= f.select :skill_level, ['Beginner', 'Intermediate', 'Pro'], {}, {:class => 'browser-default'} %>
-  <%= f.submit "Change Skill" %>
+  <%= f.select :skill_level, ['Beginner', 'Intermediate', 'Advanced'], {}, {:class => 'browser-default'} %>
+  <%= f.submit "Change Skill Level" %>
 <% end %>
