@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col s12 m6 offset-m3">
-    <div class="card-panel blue-grey darken-2">
+    <div class="card-panel white">
        <div>
          <%= f.label :description %>
          <%= f.text_field :description, value: @game.description %>
@@ -32,10 +32,10 @@
        </div>
 
        <div class="row center-align">
-        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
+        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn deep-orange") do %>
           <i class="icon-ok icon-white"></i> Update Game
         <% end %>
-        <%= link_to "Delete Game", location_sport_game_path(game.location, game.sport, game), method: :delete, class: "waves-effect waves-light btn" %>
+        <%= link_to "Delete Game", location_sport_game_path(game.location, game.sport, game), method: :delete, class: "waves-effect waves-light btn deep-orange" %>
       </div>
     </div>
   </div>

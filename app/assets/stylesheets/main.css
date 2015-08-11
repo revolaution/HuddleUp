@@ -45,22 +45,56 @@ body #landing-page{
 	background-size: cover;
 }
 
-.fa-facebook
-{
-	color:#fff;
-}
-.description, .header
+.description, .header, .location-links
 {
 	color:white;
 }
 
+.location-links:hover
+{
+	color: #ff5722;
+}
 
 .page-align
 {
 	height:100%;
 
 }
-.title
+#city-submit
 {
-	
+	display: none;
+}
+
+.game-title
+{
+	color:#d84315;
+	font-size: 18px;
+}
+.game-title:hover
+{
+	color:#ff5722;
+}
+
+.game-info
+{
+	font-size: 16px;
+}
+
+.game-show-info
+{
+	font-size: 24px;
+}
+.img-border
+{
+	border: 3px solid #ff5722;
+	margin-right: 10px;
+}
+.profile
+{
+	padding:35px;
+}
+
+.game-buttons
+{
+	color: #ff5722;
 }
