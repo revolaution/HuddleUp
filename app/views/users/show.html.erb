@@ -4,13 +4,13 @@
 			<div class="col l12">
 				<h4 class = "title"><img src = "<%= @user.image %>" class = "img-border"><%= @user.name %>'s Profile</h4>
 				<% if current_user == @user && !@user.location %>
-				  <p style = "text-decoration: underline;">Select City:</p>
+				  <p><strong>Select Your City To Get Started:</p>
 				    <%= form_for @user do |f| %>
 				      <%= render partial: "city_form", locals: {f: f} %>
 				    <% end %>
 				<% elsif current_user == @user %>
-					<%= link_to "Create A Game!", new_location_path, class: "game-title" %>
-					<%= link_to "Find A Game!", location_path(@user.location), class: "game-title" %>
+					<%= link_to "Create A Game", new_location_path, class: "waves-effect waves-light btn deep-orange" %>
+					<%= link_to "Find A Game", location_path(@user.location), class: "waves-effect waves-light btn deep-orange" %>
 				<% end %>
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 					<li class="tab col s3"><a href="#upcoming">Upcoming Games</a></li>
 					<li class="tab col s3"><a href="#friends">Friends</a></li>
 					<li class="tab col s3"><a href="#teams">Teams</a></li>
-					<% if current_user == @user %><li class="tab col s3"><a href="#city">Change City</a></li><% end %>
+					<% if current_user == @user && @user.location %><li class="tab col s3"><a href="#city">Change City</a></li><% end %>
 				</ul>
 			</div>
 				<div id="today" class="col s12">
@@ -44,14 +44,14 @@
 					<% end %>
 				</div>
 				<div id="teams" class="col s12">
-					<%= link_to "Create Team", new_team_path, class: "game-title" %>
+					<%= link_to "Create Team", new_team_path, class: "waves-effect waves-light btn deep-orange" %>
 					<% @teams.each do |team| %>
 					  <%= render partial: "teams", locals: {team: team} %>
 					<% end %>
 				</div>
 				<div id="city" class="col s12">
-					<% if current_user == @user %>
-					  <p style = "text-decoration: underline;">Select City:</p>
+					<% if current_user == @user && @user.location %>
+					  <p style = "text-decoration: underline;">Select Your City:</p>
 				    <%= form_for @user do |f| %>
 				      <%= render partial: "city_form", locals: {f: f} %>
 				    <% end %>
