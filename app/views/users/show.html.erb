@@ -3,29 +3,25 @@
 		<div class = "row">
 			<div class="col l12">
 				<h4 class = "title"><img src = "<%= @user.image %>" class = "img-border"><%= @user.name %>'s Profile</h4>
-				<% if current_user == @user %>
+				<% if current_user == @user && !@user.location %>
 				  <p style = "text-decoration: underline;">Select City:</p>
 				    <%= form_for @user do |f| %>
 				      <%= render partial: "city_form", locals: {f: f} %>
 				    <% end %>
-				  <p>
-				  	<%= link_to "Create Team", new_team_path %>
-				  </p>
+				<% elsif current_user == @user %>
+					<%= link_to "Find A Game!", location_path(@user.location), class: "game-title" %>
 				<% end %>
-				<p>
-				  <%= render partial: "teams", locals: {teams: @teams} %>
-				 </p>
-				 <p>
-				 	<%= render partial: "previous_players", locals: {user: @user} %>
-				 </p>
 			</div>
 		</div>
 		<div class = "row">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s3"><a href="#today">Games Today</a></li>
+					<li class="tab col s3"><a href="#today">Your Games Today</a></li>
 					<li class="tab col s3"><a href="#created">Games Created</a></li>
 					<li class="tab col s3"><a href="#upcoming">Upcoming Games</a></li>
+					<li class="tab col s3"><a href="#friends">Friends</a></li>
+					<li class="tab col s3"><a href="#teams">Teams</a></li>
+					<% if current_user == @user %><li class="tab col s3"><a href="#city">Change City</a></li><% end %>
 				</ul>
 			</div>
 				<div id="today" class="col s12">
@@ -41,6 +37,25 @@
 				<div id="upcoming" class="col s12">
 					<% @games_upcoming.each do |game| %>
 					  <%= render partial: "sports/games", locals: {game: game} %>
+					<% end %>
+				</div>
+				<div id="friends" class="col s12">
+					<% @user.users_from_previous_games.each do |participant| %>
+					  <%= render partial: "friends", locals: {participant: participant} %>
+					<% end %>
+				</div>
+				<div id="teams" class="col s12">
+					<%= link_to "Create Team", new_team_path, class: "game-title" %>
+					<% @teams.each do |team| %>
+					  <%= render partial: "teams", locals: {team: team} %>
+					<% end %>
+				</div>
+				<div id="city" class="col s12">
+					<% if current_user == @user %>
+					  <p style = "text-decoration: underline;">Select City:</p>
+				    <%= form_for @user do |f| %>
+				      <%= render partial: "city_form", locals: {f: f} %>
+				    <% end %>
 					<% end %>
 				</div>
 		</div>
