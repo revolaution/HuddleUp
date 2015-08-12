@@ -6,7 +6,7 @@
         <% row.each do |sport| %>
           <div class="col s12 m6 l3 ">
             <div class="card">
-              <a href = "/locations/<%= current_user.location.id %>/sports/<%= sport.id %>/games/new">
+              <a href = "/locations/<%= current_user.location.id %>/sports/<%= sport.id %>/games/new?date=<%= Date.today.strftime("%Y-%m-%d") %>">
                 <div class="card-image sport-image">
                   <%= image_tag sport.image_path %>
                 </div>
