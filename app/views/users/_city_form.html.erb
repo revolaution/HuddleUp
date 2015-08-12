@@ -1,2 +1,2 @@
 <%= f.collection_select(:location_id, Location.all, :id, :name, {}, {:class => 'browser-default', style: "width:200px;", :selected => @user.location_id}) %>
-<%= f.submit "Select City", id: "city-submit" %>
+<%= f.submit "Submit", id: "city-submit" %>
