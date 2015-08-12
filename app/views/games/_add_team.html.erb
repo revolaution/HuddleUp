@@ -1,0 +1,12 @@
+<% if current_user && current_user == game.creator && game.valid_teams.count > 0 %>
+  <p>Add Team To Game</p>
+  <ul>
+    <% game.valid_teams.each do |team| %>
+      <%= form_for team.name, url: team_add_path(@location, @sport, @game, team) do |f| %>
+        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn deep-orange") do %>
+          <i class="icon-ok icon-white"></i><%= team.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

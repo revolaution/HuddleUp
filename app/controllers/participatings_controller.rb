@@ -10,6 +10,16 @@ class ParticipatingsController < ApplicationController
     end
   end
 
+  def team_add
+    @team = Team.find(params[:id])
+    @team.users.each do |user|
+      if !@game.participants.include?(user)
+        Participating.create(participant: user, game: @game)
+      end
+    end
+    redirect_to location_sport_game_path(@location, @sport, @game)
+  end
+
   private
     def load_location
       @location = Location.find(params[:location_id])

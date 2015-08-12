@@ -40,4 +40,8 @@ class Game < ActiveRecord::Base
   def not_full?
     self.current_participants_count != self.max_number_of_participants
   end
+
+  def valid_teams
+    self.creator.teams.select{|team| team.users.any?{|member| !self.participants.include?(member)}}
+  end
 end

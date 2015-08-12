@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :update]
 
+  post '/locations/:location_id/sports/:sport_id/game/:game_id/team_add/:id' => 'participatings#team_add', as: "team_add"
   get '/teams/new' => 'teams#new', as: "new_team"
   post '/teams' => 'teams#create', as: "create_team"
   get '/teams/:id' => 'teams#show', as: "show_team"
