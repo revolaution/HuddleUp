@@ -33,12 +33,12 @@
        </div>
 
        <div>
-         <%= f.label :address %>
+         <%= f.label "Location Address" %>
          <%= f.text_field :address, id: "searchTextField", placeholder: "Enter your address", value: @game.address %>
        </div>
 
        <div>
-        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
+        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn", onclick: "Materialize.toast('Game Created!', 4000, 'green')") do %>
         <i class="icon-ok icon-white"></i> Create Game
         <% end %>
       </div>

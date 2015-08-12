@@ -9,7 +9,7 @@ $(function() {
     var url = $('#start-new-game a').attr('href');
     request = $.ajax({type: 'GET', url: url,})
     request.done(function (response){
-      $('.calender').hide();
+      $('.calendar').hide();
       $('.games').hide();
       $('#start-new-game').hide();
       $('#new-game-form').append(response);

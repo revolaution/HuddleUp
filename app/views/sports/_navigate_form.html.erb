@@ -1,9 +1,9 @@
-<div>
-  <%= f.label :new_date %>
-  <%= f.date_field :new_date, value: @date %>
+<div class = "input-size">
+  <%= f.label "Jump to:" %>
+  <%= f.date_field :new_date, value: @date, style: "text-align: center;" %>
 </div>
 <div>
-  <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
+  <%= button_tag(type: 'submit', class: "hide") do %>
     <i class="icon-ok icon-white"></i>Jump to Date
   <% end %>
 </div>
