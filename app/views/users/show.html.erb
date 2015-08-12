@@ -23,9 +23,9 @@
 		<div class = "row">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s3"><a href="#today">Games Today</a></li>
-					<li class="tab col s3"><a href="#created">Games Created</a></li>
-					<li class="tab col s3"><a href="#upcoming">Upcoming Games</a></li>
+					<li class="tab col s3"><a href="#today">Games <%= @user.name %> is Playing Today</a></li>
+					<li class="tab col s3"><a href="#created">Games <%= @user.name %> Created</a></li>
+					<li class="tab col s3"><a href="#upcoming"><%= @user.name %>&#39;s Upcoming Games</a></li>
 				</ul>
 			</div>
 				<div id="today" class="col s12">

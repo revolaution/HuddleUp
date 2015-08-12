@@ -2,17 +2,17 @@
   <div class="container page-align">
     <div class="row valign-wrapper page-align center-align">
       <div class="description col s12 l6 valign">
-          <h4>Find a city.</h4>
-          <h4>Find a game.</h4>
-          <h4 style="color:#ff5722;">Square Up.</h4>
+          <h3><strong>Find a city.</strong></h3>
+          <h3><strong>Find a game.</strong></h3>
+          <h3 style="color:#ff5722;"><strong>Square Up.</strong></h3>
       </div>
       <div class="city-login col s12 l6 valign center-align">
-          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "waves-effect waves-light btn blue darken-2" %>
-          <h5 class="header">or</h5>
-          <h4 class="header">Find sports in your city</h4>
+          <h4 class="header">To find sports in your city</h4>
           <% @locations.each do |location| %>
-          <%= render partial: "locations/location", locals: {location: location} %><span style="color:#ff5722;">|</span>
+            <%= render partial: "locations/location", locals: {location: location} %><span style="color:#ff5722;">|</span>
           <% end %>
+          <br><br>
+          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "waves-effect waves-light btn blue darken-2" %>  
       </div>
     </div>
   </div>

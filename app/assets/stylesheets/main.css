@@ -41,11 +41,6 @@ body #landing-page{
 	color:white;
 }
 
-.location-links:hover
-{
-	color: #ff5722;
-}
-
 .page-align
 {
 	height:100%;
@@ -98,4 +93,14 @@ body #landing-page{
 {
 	text-align:center;
 	color:red;
+}
+
+.creative-commons
+{
+	font-size: 8px;
+	color:white;
+}
+.creative-commons a
+{
+	color:black;
 }
