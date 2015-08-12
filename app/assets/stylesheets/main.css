@@ -41,7 +41,7 @@ body #landing-page{
 	color:white;
 }
 
-.page-align
+.page-push
 {
 	height:100%;
 
@@ -80,6 +80,7 @@ body #landing-page{
 	padding:35px;
 	margin-top: 125px;
 	margin-bottom: 125px;
+	min-height: 500px
 }
 
 .game-buttons
