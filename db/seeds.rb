@@ -23,5 +23,3 @@ sport_5 = Sport.create(name: "Soccer", image_path: "soccer.png")
 sport_6 = Sport.create(name: "Tennis", image_path: "tennis.png")
 sport_7 = Sport.create(name: "Hockey", image_path: "puck.png")
 sport_8 = Sport.create(name: "Baseball", image_path: "baseball.png")
-sport_9 = Sport.create(name: "Miscellaneous", image_path: "cricket.png")
-
