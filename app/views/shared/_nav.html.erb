@@ -2,6 +2,7 @@
   <div class = "nav-wrapper white">
     <%= render partial: "shared/logo" %>
     <ul id = "nav-mobile" class = "right hide-on-med-and-down">
+      <%= render partial: "shared/breadcrumbs" %>
       <% if current_user && current_user.location %>
         <li><a class="black-text" href="/users/<%= current_user.id %>">Welcome, <strong><%= current_user.name %></strong>!</a></li>
         <li><%= link_to "Find Sports", location_path(current_user.location), class: "black-text" %></li>
