@@ -78,6 +78,8 @@ body #landing-page{
 .profile
 {
 	padding:35px;
+	margin-top: 125px;
+	margin-bottom: 125px;
 }
 
 .game-buttons
@@ -105,3 +107,11 @@ body #landing-page{
 {
 	color:black;
 }
+
+.sport-image
+{
+	height: 128px;
+	width: 128px;
+	margin: 10px auto;
+}
+
