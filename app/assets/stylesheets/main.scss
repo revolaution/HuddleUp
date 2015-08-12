@@ -29,7 +29,7 @@ html, body
 
 body #landing-page{
 	height:100%;
-	background: url(huddle.png) no-repeat center center fixed; 
+	background: image-url("huddle.png") no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -80,7 +80,7 @@ body #landing-page{
 	padding:35px;
 	margin-top: 125px;
 	margin-bottom: 125px;
-	min-height: 500px
+	min-height: 525px
 }
 
 .game-buttons
