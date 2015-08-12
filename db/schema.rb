@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150812145815) do
   end
 
   create_table "sports", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image_path"
