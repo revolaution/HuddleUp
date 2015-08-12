@@ -1,0 +1,9 @@
+<% if @location %>
+  <li><a href="/locations/<%= @location.id %>" class="orange-text"><%= @location.name %></a></li>
+<% end %>
+<% if @location && @sport %>
+  <li class="black-text">/</li><li><a href="/locations/<%= @location.id %>/sports/<%= @sport.id %>" class="orange-text"><%= @sport.name %></a></li>
+<% end %>
+<% if @location && @sport && @game %>
+  <li class="black-text">/</li><li><a href="/locations/<%= @location.id %>/sports/<%= @sport.id %>/games/<%= @game.id %>" class="orange-text"><%= @game.description %></a></li>
+<% end %>
