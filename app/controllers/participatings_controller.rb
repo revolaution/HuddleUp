@@ -20,6 +20,19 @@ class ParticipatingsController < ApplicationController
     redirect_to location_sport_game_path(@location, @sport, @game)
   end
 
+  def leave_game
+    if !@game.participants.include?(current_user)
+      redirect_to :back
+    elsif @game.creator == current_user
+      @game.destroy
+      redirect_to location_sport_path(@location, @sport)
+    else
+      @participating = Participating.find_by(participant: current_user, game: @game)
+      @participating.destroy
+      redirect_to location_sport_game_path(@location, @sport, @game)
+    end
+  end
+
   private
     def load_location
       @location = Location.find(params[:location_id])
