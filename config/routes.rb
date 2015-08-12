@@ -29,4 +29,5 @@ Rails.application.routes.draw do
 
   patch '/locations/:location_id/sports/:id/navigate' => 'sports#navigate', as: "location_sport_navigate"
   patch '/locations/:location_id/sports/:id/skill' => 'users_sports#change_skill', as: 'location_sport_skill'
+
 end
