@@ -34,7 +34,7 @@ class Game < ActiveRecord::Base
   end
 
   def available_space
-    return self.max_number_of_participants - self.current_participants_count
+    self.max_number_of_participants - self.current_participants_count
   end
 
   def not_full?

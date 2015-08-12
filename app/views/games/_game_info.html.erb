@@ -1,0 +1,9 @@
+<ul class = "game-show-info">
+  <li><strong>Description: </strong><%= @game.description %></li>
+  <li><strong>Difficulty: </strong><%= @game.difficulty %></li>
+  <li><strong>Time: </strong><%= @game.start_at.strftime("%l:%M %p") %> -<%= @game.end_at.strftime("%l:%M %p") %></li>
+  <li><strong>Openings: </strong><%= @game.available_space %> spots out of <%= @game.max_number_of_participants %></li>
+  <li><strong>Address: </strong><%= @game.address %></li>
+  <li><strong>Creator: </strong><%= link_to @game.creator.name, @game.creator %></li>
+  <li><%= render partial: "participants", locals: {participants: @participants, game: @game} %></li>
+</ul>
