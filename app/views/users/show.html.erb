@@ -9,6 +9,7 @@
 				      <%= render partial: "city_form", locals: {f: f} %>
 				    <% end %>
 				<% elsif current_user == @user %>
+					<%= link_to "Create A Game!", new_location_path, class: "game-title" %>
 					<%= link_to "Find A Game!", location_path(@user.location), class: "game-title" %>
 				<% end %>
 			</div>
