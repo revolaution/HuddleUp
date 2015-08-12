@@ -21,8 +21,7 @@
         <div class="row">
           <div class="game-buttons col m3"><%= render partial: "edit_link", locals: {game: @game} %></div>
           <div class="game-buttons col m3"><%= render partial: "join_game", locals: {participant: @participant, game: @game} %></div>
-
-          <div class="game-buttons col m3 btn waves-effect waves-light deep-orange"><%= link_to "Back to #{@sport.name}", controller: "sports", action: "show", id: @sport %></div>
+          <div class="game-buttons col m3 btn waves-effect waves-light deep-orange"><%= link_to "Back to #{@sport.name}", location_sport_path(@location, @sport) %></div>
           <%= render partial: "add_team", locals: {game: @game} %>
         </div>
       </div>
