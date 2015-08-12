@@ -4,7 +4,7 @@
       <div class="row">
         <% row.each do |sport| %>
           <div class="col s12 m6 l3 ">
-            <div class="card">
+            <div class="card hoverable">
               <a href = "/locations/<%= @location.id %>/sports/<%= sport.id %>">
                 <div class="card-image sport-image">
                   <%= image_tag sport.image_path %>

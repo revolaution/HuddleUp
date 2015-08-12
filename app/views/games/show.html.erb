@@ -22,6 +22,7 @@
             <tr class="col s12 l12">
               <td><div class="game-buttons"><%= render partial: "edit_link", locals: {game: @game} %></div></td>
               <td><div class="game-buttons"><%= render partial: "join_game", locals: {participant: @participant, game: @game} %></div></td>
+              <td><div class="game-buttons"><%= render partial: "leave_game", locals: {participating: @participating, game: @game} %></div></td>
               <td><%= link_to "Delete Game", location_sport_game_path(@game.location, @game.sport, @game), method: :delete, class: "waves-effect waves-light btn deep-orange", onclick: "Materialize.toast('Game Deleted', 4000, 'red')" %></td>
               <td><div class="game-buttons btn waves-effect waves-light deep-orange"><%= link_to "Back to #{@sport.name}", location_sport_path(@location, @sport) %></div></td>
             </tr>
