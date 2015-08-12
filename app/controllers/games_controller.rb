@@ -6,6 +6,9 @@ class GamesController < ApplicationController
   def show
     @participants = @game.participants
     @participant = Participating.new
+    if current_user && @game.participants.include?(current_user)
+      @participating = Participating.find_by(participant: current_user, game: @game)
+    end
   end
 
   def new

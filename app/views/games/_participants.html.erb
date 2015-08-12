@@ -8,7 +8,6 @@
     <% participants.each do |participant| %>
       <tr>
         <td><%= render partial: "participant", locals: {participant: participant} %></td>
-        <td><%= participant.users_sports.find_by(sport: @sport).skill_level %></td>
       </tr>
     <% end %>
   </tbody>
