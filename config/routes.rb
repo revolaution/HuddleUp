@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   # You can have the root of your site routed with "root"
-  resources :locations, only: [:show, :new, :post] do
+  resources :locations, only: [:show, :new] do
     resources :sports, only: [:show] do
       resources :games, except: [:index] do
         resources :participatings, only: [:create ]
