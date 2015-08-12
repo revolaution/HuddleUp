@@ -44,4 +44,14 @@ class User < ActiveRecord::Base
   def sort_games(array)
     array.sort{|a,b| b.available_space <=> a.available_space }
   end
+
+  def users_from_previous_games
+    players = []
+    self.games.each do |game|
+      game.participants.each do |participant|
+        players.push(participant) if !players.include?(participant) && participant != self
+      end
+    end
+    return players
+  end
 end
