@@ -21,15 +21,12 @@ class ParticipatingsController < ApplicationController
   end
 
   def leave_game
-    if !@game.participants.include?(current_user)
-      redirect_to :back
-    elsif @game.creator == current_user
-      @game.destroy
-      redirect_to location_sport_path(@location, @sport)
-    else
+    if @game.participants.include?(current_user) && current_user != @game.creator
       @participating = Participating.find_by(participant: current_user, game: @game)
       @participating.destroy
       redirect_to location_sport_game_path(@location, @sport, @game)
+    else
+      redirect_to :back
     end
   end
 
