@@ -16,8 +16,11 @@
 		<div class = "row">
 			<div class="col s12">
 				<ul class="tabs">
-					<li class="tab col s3"><a href="#today">Your Games Today</a></li>
-					<li class="tab col s3"><a href="#created">Games Created</a></li>
+					<% if current_user == @user %>
+						<li class="tab col s3"><a href="#today">Your Games Today</a></li>
+					<% else %>
+						<li class="tab col s3"><a href="#today">Their Games Today</a></li>
+					<% end %>
 					<li class="tab col s3"><a href="#upcoming">Upcoming Games</a></li>
 					<li class="tab col s3"><a href="#friends">Friends</a></li>
 					<li class="tab col s3"><a href="#teams">Teams</a></li>
@@ -26,11 +29,6 @@
 			</div>
 				<div id="today" class="col s12">
 					<% @games_today.each do |game| %>
-					  <%= render partial: "sports/games", locals: {game: game} %>
-					<% end %>
-				</div>
-				<div id="created" class="col s12">
-					<% @games_created.each do |game| %>
 					  <%= render partial: "sports/games", locals: {game: game} %>
 					<% end %>
 				</div>
