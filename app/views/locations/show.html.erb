@@ -3,14 +3,14 @@
     <% @sports.each do |row| %>
       <div class="row">
         <% row.each do |sport| %>
-          <div class="col s12 m4 l4 ">
+          <div class="col s12 m6 l3 ">
             <div class="card">
               <a href = "/locations/<%= @location.id %>/sports/<%= sport.id %>">
-                <div class="card-image">
-                  <%= image_tag("sports") %>
+                <div class="card-image sport-image">
+                  <%= image_tag sport.image_path %>
                 </div>
                 <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4 center-align flow-text"><h5><%= render partial: "sport", locals: {sport: sport} %></h5></span>
+                  <span class="card-title activator grey-text text-darken-4 center-align flow-text"><p><%= render partial: "sport", locals: {sport: sport} %></p></span>
                 </div>
               </a>
             </div>
