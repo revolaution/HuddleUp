@@ -1,0 +1,7 @@
+<% if current_user && participating %>
+  <%= form_for participating, url: leave_game_path(@location, @sport, @game, participating) do |f| %>
+    <%= button_tag(type: 'submit', class: "waves-effect waves-light btn deep-orange", onclick: "Materialize.toast('Joined game!', 4000, 'green')") do %>
+      <i class="icon-ok icon-white"></i>Leave Game
+    <% end %>
+  <% end %>
+<% end %>
