@@ -53,8 +53,8 @@ body #landing-page{
 
 .game-title
 {
-	color:#d84315;
-	font-size: 18px;
+	color:white;
+	font-size: 24px;
 }
 .game-title:hover
 {
@@ -122,5 +122,10 @@ body #landing-page{
 }
 
 #game-title {
-  border-bottom: 5px solid white;
+  border-bottom: 2px solid white;
+}
+
+.game-data
+{
+	color: #212121;
 }
