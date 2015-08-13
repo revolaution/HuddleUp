@@ -15,6 +15,13 @@ class GamesController < ApplicationController
     redirect_to_sport(@location, @sport) unless current_user
     @date = params[:date]
     @game = Game.new
+    unless @game.start_at
+      @game.start_at = (Time.now + 1.hours).beginning_of_hour
+    end
+    unless @game.end_at
+      @game.end_at = (Time.now + 3.hours).beginning_of_hour
+    end
+
     if request.xhr?
       render 'new', layout: false
     end
