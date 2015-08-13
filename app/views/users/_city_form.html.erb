@@ -1,2 +1,4 @@
 <%= f.collection_select(:location_id, Location.all, :id, :name, {}, {:class => 'browser-default', style: "width:200px;", :selected => @user.location_id}) %>
-<%= f.submit "Submit", id: "city-submit" %>
+<%= button_tag(type: 'submit', class: "waves-effect waves-light btn deep-orange") do %>
+	<i class="icon-ok icon-white"></i> Set Location
+<% end %>
