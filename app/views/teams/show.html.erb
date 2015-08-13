@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="card white profile">
-    <h1><%= @team.name %></h1>
+  <div class="card white profile deep-orange-text">
+    <h1 class="deep-orange-text"><%= @team.name %></h1>
     <p>Team Captain: <%= link_to @team.creator.name, @team.creator %></p>
     <p>Team Members:
       <ul>
@@ -9,10 +9,11 @@
         <% end %>
       </ul>
       <% if current_user && !@team.users.include?(current_user) %>
-        <%= link_to "Join Team", join_team_path(@team), method: :post %>
+        <%= link_to "Join Team", join_team_path(@team), method: :post, class: "waves-effect waves-light btn deep-orange" %>
       <% elsif current_user && @team.users.include?(current_user) %>
-        <%= link_to "Leave Team", leave_team_path(@team), method: :delete %>
+        <%= link_to "Leave Team", leave_team_path(@team), method: :delete, class: "waves-effect waves-light btn deep-orange" %>
       <% end %>
     </p>
+    <%= link_to "Back to your homepage", user_path(current_user), class: "waves-effect waves-light btn deep-orange" %>
   </div>
 </div>
