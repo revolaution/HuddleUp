@@ -1,5 +1,4 @@
+<%= render partial:"errors", locals: {game: @game} %>
 <%= form_for @game, url: location_sport_game_path(@location, @sport, @game) do |f| %>
   <%= render partial:"edit_form", locals: {f: f, game: @game} %>
 <% end %>
-
-<%= render partial:"errors", locals: {game: @game} %>

@@ -1,47 +1,41 @@
 <%= render partial: 'games/autocomplete_script' %>
-<div class="row">
-  <div class="col s12 m6 offset-m3">
-    <div class="card-panel black-text white">
-       <div>
-         <%= f.label :description %>
-         <%= f.text_field :description, value: @game.description %>
-       </div>
+<div>
+  <%= f.label :description %>
+  <%= f.text_field :description, value: @game.description %>
+</div>
 
-       <div>
-         <%= f.label :difficulty %>
-         <%= f.select :difficulty, ['Beginner', 'Intermediate', 'Advanced'], {}, {:class => 'browser-default'} %>
-       </div>
+<div>
+  <%= f.label :difficulty %>
+  <%= f.select :difficulty, ['Beginner', 'Intermediate', 'Advanced'], {}, {:class => 'browser-default'} %>
+</div>
 
-       <div>
-         <%= f.label :max_number_of_participants %>
-         <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
-       </div>
+<div>
+  <%= f.label :max_number_of_participants %>
+  <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
+</div>
 
-       <div>
-         <%= f.label :start_at %>
-         <%= f.time_field :start_at, value: @game.start_at.strftime("%H:%M") %>
-       </div>
+<div>
+ <%= f.label :start_at %>
+ <%= f.time_field :start_at, value: @game.start_at.strftime("%H:%M") %>
+</div>
 
-       <div>
-         <%= f.label :end_at %>
-         <%= f.time_field :end_at, value: @game.end_at.strftime("%H:%M") %>
-       </div>
+<div>
+ <%= f.label :end_at %>
+ <%= f.time_field :end_at, value: @game.end_at.strftime("%H:%M") %>
+</div>
 
-       <div>
-         <%= f.label :date %>
-         <%= f.date_field :date, value: @date %>
-       </div>
+<div>
+  <%= f.label :date %>
+  <%= f.date_field :date, value: @date %>
+</div>
 
-       <div>
-         <%= f.label "Location Address" %>
-         <%= f.text_field :address, id: "searchTextField", placeholder: "Enter your address", value: @game.address %>
-       </div>
+<div>
+  <%= f.label "Location Address" %>
+  <%= f.text_field :address, id: "searchTextField", placeholder: "Enter location address", value: @game.address %>
+</div>
 
-       <div>
-        <%= button_tag(type: 'submit', class: "waves-effect waves-light btn") do %>
-        <i class="icon-ok icon-white"></i> Create Game
-        <% end %>
-      </div>
-    </div>
-  </div>
+<div>
+  <%= button_tag(type: 'submit', class: "waves-effect waves-light btn deep-orange") do %>
+  <i class="icon-ok icon-white"></i> Create Game
+  <% end %>
 </div>
