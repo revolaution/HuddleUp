@@ -11,7 +11,7 @@
 
 <div>
   <%= f.label :max_number_of_participants %>
-  <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants %>
+  <%= f.number_field :max_number_of_participants, value: @game.max_number_of_participants, min: 2, value: 2  %>
 </div>
 
 <div>
