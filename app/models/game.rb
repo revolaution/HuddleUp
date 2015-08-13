@@ -5,11 +5,6 @@ class Game < ActiveRecord::Base
   belongs_to :sport
   belongs_to :location
 
-  geocoded_by :address
-  acts_as_mappable :lat_column_name => :latitude,
-                  :lng_column_name => :longitude,
-                  :auto_geocode => true
-
   validates :max_number_of_participants, :description, :difficulty, :creator, :sport, :start_at, :end_at, :location, :address, :date, presence: true
 
   validate :date_cannot_be_in_past
