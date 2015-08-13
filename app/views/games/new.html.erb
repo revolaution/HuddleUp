@@ -1,5 +1,11 @@
-<%= form_for @game, url: location_sport_games_path(@location, @sport) do |f| %>
-  <%= render partial: "new_form", locals: {f: f} %>
-<% end %>
+<div class="row">
+  <div class="col s12 m6 l6 offset-l3">
+    <div class="card-panel black-text white">  
+      <%= render partial:"errors", locals: {game: @game} %>
+      <%= form_for @game, url: location_sport_games_path(@location, @sport) do |f| %>
+        <%= render partial: "new_form", locals: {f: f} %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= render partial:"errors", locals: {game: @game} %>

@@ -11,8 +11,9 @@ $(function() {
     request.done(function (response){
       $('#top-box').hide();
       $('.games').hide();
+      $('.ajax-hide').remove();
       $('#start-new-game').hide();
-      $('#new-game-form').append(response);
+      $('#new-game-form').after(response);
     })
   })
 });

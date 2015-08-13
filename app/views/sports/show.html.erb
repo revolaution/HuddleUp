@@ -1,6 +1,6 @@
 <div class = "container">
-  <div class="row">
-    <div class="card-panel white profile">
+  <div class="row ajax-hide">
+    <div class="card-panel white profile ajax-hide">
       <div class="row s12 m12 l12">
         <div class="s12 m12 l12 center-align">
           <h3><%= @sport.name %></h3>
@@ -40,9 +40,10 @@
             <div class="card-action"></div>
           </div>
         </div>
+
         <% end %>
       </div>
-      <div id="new-game-form"></div>
     </div>
   </div>
+  <div id="new-game-form"></div>
 </div>
