@@ -4,17 +4,9 @@
 <div class="game-info">
   <ul>
     <li><%= game.date.strftime("%A, %d %b %Y") %></li>
-    <li>Max Players:<br/>
-      <%= game.max_number_of_participants %>
-    </li>
-    <li>Difficulty:<br/>
-     <%= game.difficulty %>
-   </li>
-    <li>Time Slot:</br>
-      <%= game.start_at.strftime("%l:%M %p") %> - <%= game.end_at.strftime("%l:%M %p")%>
-    </li>
-    <li>Address:<br />
-     <%= game.address %>
-   </li>
+    <li><span class = "game-data">Max Players:</span><%= game.max_number_of_participants %></li>
+    <li><span class = "game-data">Difficulty:</span> <%= game.difficulty %></li>
+    <li><span class = "game-data">Time Slot:</span> <%= game.start_at.strftime("%l:%M %p") %> - <%= game.end_at.strftime("%l:%M %p")%></li>
+    <li><span class = "game-data">Address:</span> <%= game.address %></li>
   </ul>
 </div>
