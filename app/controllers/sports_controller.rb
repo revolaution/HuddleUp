@@ -2,6 +2,7 @@ class SportsController < ApplicationController
   before_action :load_location, :load_date, :load_sport, only: [:show, :navigate]
 
   def show
+    @date = Date.today unless @date
     if @date == Date.today
       @date_display = "#{@date.strftime("%A, %d %b %Y")} (Today)"
     else
