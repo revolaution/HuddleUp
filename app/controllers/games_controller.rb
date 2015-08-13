@@ -16,10 +16,10 @@ class GamesController < ApplicationController
     @date = params[:date]
     @game = Game.new
     if !@game.start_at
-      @game.start_at = (Time.now + 1.hours).beginning_of_hour
+      @game.start_at = (Time.now - 4.hours).beginning_of_hour
     end
     if !@game.end_at
-      @game.end_at = (Time.now + 3.hours).beginning_of_hour
+      @game.end_at = (Time.now - 2.hours).beginning_of_hour
     end
 
     if request.xhr?
