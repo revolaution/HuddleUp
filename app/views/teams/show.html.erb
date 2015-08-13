@@ -1,14 +1,18 @@
-<h1>Team Name: <%= @team.name %></h1>
-<p>Team Captain: <%= link_to @team.creator.name, @team.creator %></p>
-<p>Team Members:
-  <ul>
-    <% @members.each do |member| %>
-      <%= render partial:"members", locals: {member: member} %>
-    <% end %>
-  </ul>
-  <% if current_user && !@team.users.include?(current_user) %>
-    <%= link_to "Join Team", join_team_path(@team), method: :post %>
-  <% elsif current_user && @team.users.include?(current_user) %>
-    <%= link_to "Leave Team", leave_team_path(@team), method: :delete %>
-  <% end %>
-</p>
+<div class="container">
+  <div class="card white profile">
+    <h1><%= @team.name %></h1>
+    <p>Team Captain: <%= link_to @team.creator.name, @team.creator %></p>
+    <p>Team Members:
+      <ul>
+        <% @members.each do |member| %>
+          <%= render partial:"members", locals: {member: member} %>
+        <% end %>
+      </ul>
+      <% if current_user && !@team.users.include?(current_user) %>
+        <%= link_to "Join Team", join_team_path(@team), method: :post %>
+      <% elsif current_user && @team.users.include?(current_user) %>
+        <%= link_to "Leave Team", leave_team_path(@team), method: :delete %>
+      <% end %>
+    </p>
+  </div>
+</div>
