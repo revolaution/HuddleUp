@@ -40,8 +40,8 @@
 				</div>
 				<div id="friends" class="col s12">
 					<% @user.users_from_previous_games.each do |participant| %>
-						<ul class="collection">
-						  <%= render partial: "friends", locals: {participant: participant} %>
+					  <ul class="collection">
+					  	<%= render partial: "friends", locals: {participant: participant} %>
 					  </ul>
 					<% end %>
 				</div>
