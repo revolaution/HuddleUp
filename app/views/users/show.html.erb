@@ -26,7 +26,6 @@
 					<li class="tab col s3"><a href="#friends">Friends</a></li>
 					<li class="tab col s3"><a href="#teams">Teams</a></li>
 					<% if current_user == @user && @user.location %><li class="tab col s3"><a href="#city">Change City</a></li><% end %>
-					<% if current_user == @user && @user.location %><li class="tab col s3"><a href="#about">About</a></li><% end %>
 				</ul>
 			</div>
 				<div id="today" class="col s12">
@@ -56,11 +55,6 @@
 				    <%= form_for @user do |f| %>
 				      <%= render partial: "city_form", locals: {f: f} %>
 				    <% end %>
-					<% end %>
-				</div>
-				<div id="city" class="col s12">
-					<% if current_user == @user && @user.location %>
-				     <%= render partial: "about" %>
 					<% end %>
 				</div>
 		</div>
