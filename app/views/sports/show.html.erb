@@ -1,7 +1,6 @@
 <div class = "container">
   <div class="row">
     <div class="card-panel white profile">
-
       <div class="row s12 m12 l12">
         <div class="s12 m12 l12 center-align">
           <h3><%= @sport.name %></h3>
@@ -12,29 +11,25 @@
           <%= link_to "->", location_sport_path(@location, @sport, date: @date + 1.day) %>
         </div>
       </div>
-
-      <div class="row s12 m12 l12 valign-wrapper">
-        <div class="col s12 m12 l4 valign center-align">
+      <div class="row s12 m12 l12" id="top-box">
+        <div class="col s12 m12 l4 center-align">
           <% if current_user %>
           <%= render partial: "users_sports/form" %>
           <% end %>
         </div>
-
         <div  id="start-new-game">
-          <div class="col s12 m12 l4 valign center-align">
+          <div class="col s12 m12 l4 center-align">
             <%= render partial:"new_game_link" %>
           </div>
         </div>
-
         <div class="calendar">
-          <div class=" col s12 m12 l4 valign center-align">
+          <div class=" col s12 m12 l4 center-align">
             <%= form_for(@sport, url: location_sport_navigate_path(@location, @sport)) do |f| %>
             <%= render partial: "navigate_form", locals: {f: f} %>
             <% end %>
           </div>
         </div>
       </div>
-
       <div class="row games">
         <% @games.each do |game| %>
         <div class="col s12 m12 l3">
@@ -47,7 +42,6 @@
         </div>
         <% end %>
       </div>
-
       <div id="new-game-form"></div>
     </div>
   </div>
