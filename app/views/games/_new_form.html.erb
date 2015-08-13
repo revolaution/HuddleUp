@@ -19,12 +19,12 @@
 
        <div>
          <%= f.label :start_at %>
-         <%= f.time_field :start_at, value: @game.start_at.strftime("%H:%M") || (Time.now + 1.hours).beginning_of_hour.strftime("%H:%M") %>
+         <%= f.time_field :start_at, value: @game.start_at.strftime("%H:%M") %>
        </div>
 
        <div>
          <%= f.label :end_at %>
-         <%= f.time_field :end_at, value: @game.end_at.strftime("%H:%M") || (Time.now + 3.hours).beginning_of_hour.strftime("%H:%M") %>
+         <%= f.time_field :end_at, value: @game.end_at.strftime("%H:%M") %>
        </div>
 
        <div>
