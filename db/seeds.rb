@@ -10,6 +10,7 @@ Location.destroy_all
 Sport.destroy_all
 Participating.destroy_all
 Game.destroy_all
+User.destroy_all
 
 chicago = Location.create(name: "Chicago")
 san_fran = Location.create(name: "San Fransisco")
