@@ -21,10 +21,13 @@ class MembershipsController < ApplicationController
 
   def leave
     @team = Team.find(params[:id])
-    if current_user && @team.users.include?(current_user)
+    if current_user && @team.users.include?(current_user) && @team.creator == current_user
       @membership = Membership.find_by(team: @team, user: current_user)
       @membership.destroy
       @team.destroy
+    elsif current_user && @team.users.include?(current_user)
+      @membership = Membership.find_by(team: @team, user: current_user)
+      @membership.destroy
     end
     redirect_to user_path(current_user)
   end

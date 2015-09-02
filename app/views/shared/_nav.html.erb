@@ -6,7 +6,7 @@
         <%= render partial: "shared/breadcrumbs" %>
       </ul>
       <ul id = "nav-mobile" class = "right hide-on-med-and-down">
-        <% if current_user && current_user.location %>
+        <% if user_with_location %>
           <li><a class="black-text" href="/users/<%= current_user.id %>">Welcome, <strong><%= current_user.name %></strong>!</a></li>
           <li><%= link_to "Find Sports", location_path(current_user.location), class: "black-text" %></li>
           <li><%= link_to "Sign out", signout_path, id: "sign_out",class: "black-text" %></li>
