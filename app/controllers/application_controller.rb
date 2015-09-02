@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
     current_user == game.creator
   end
   helper_method :game_creator?
+
+  def current_creator_has_valid_teams(game)
+    current_user && current_user == game.creator && game.valid_teams.count > 0
+  end
+  helper_method :current_creator_has_valid_teams
+
 end
