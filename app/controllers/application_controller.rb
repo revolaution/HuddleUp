@@ -23,4 +23,9 @@ class ApplicationController < ActionController::Base
     current_user && game.not_full? && !game.participants.include?(current_user)
   end
   helper_method :user_can_join
+
+  def user_can_leave(game, participating)
+    current_user && current_user != game.creator && participating
+  end
+  helper_method :user_can_leave
 end
