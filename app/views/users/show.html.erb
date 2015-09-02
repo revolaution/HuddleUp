@@ -3,12 +3,12 @@
 		<div class = "row">
 			<div class="col l12">
 				<h4 class = "deep-orange-text title"><img src = "<%= @user.image %>" class = "img-border"><%= @user.name %>'s Profile</h4>
-				<% if current_user == @user && !@user.location %>
+				<% if user_has_no_location %>
 					<%= render partial: "intro" %>
 			    <%= form_for @user do |f| %>
 			      <%= render partial: "city_form", locals: {f: f} %>
 			    <% end %>
-				<% elsif current_user == @user %>
+				<% elsif on_current_user_page %>
 					<%= link_to "Create A Game", new_location_path, class: "waves-effect waves-light btn deep-orange" %>
 					<%= link_to "Find A Game", location_path(@user.location), class: "waves-effect waves-light btn deep-orange" %>
 				<% end %>
@@ -17,7 +17,7 @@
 		<div class = "row">
 			<div class="col s12">
 				<ul class="tabs">
-					<% if current_user == @user %>
+					<% if on_current_user_page %>
 						<li class="tab col s3"><a href="#today">Your Games Today</a></li>
 					<% else %>
 						<li class="tab col s3"><a href="#today">Their Games Today</a></li>
@@ -25,7 +25,7 @@
 					<li class="tab col s3"><a href="#upcoming">Upcoming Games</a></li>
 					<li class="tab col s3"><a href="#friends">Friends</a></li>
 					<li class="tab col s3"><a href="#teams">Teams</a></li>
-					<% if current_user == @user && @user.location %><li class="tab col s3"><a href="#city">Change City</a></li><% end %>
+					<% if user_has_location %><li class="tab col s3"><a href="#city">Change City</a></li><% end %>
 				</ul>
 			</div>
 				<div id="today" class="col s12">
@@ -46,7 +46,7 @@
 				  </ul>
 				</div>
 				<div id="teams" class="col s12">
-					<% if current_user == @user %><%= link_to "Create Team", new_team_path, class: "waves-effect waves-light btn deep-orange" %><% end %>
+					<% if on_current_user_page %><%= link_to "Create Team", new_team_path, class: "waves-effect waves-light btn deep-orange" %><% end %>
 					<ul class="collection">
 						<% @teams.each do |team| %>
 						  <%= render partial: "teams", locals: {team: team} %>
@@ -54,7 +54,7 @@
 					</ul>
 				</div>
 				<div id="city" class="col s12">
-					<% if current_user == @user && @user.location %>
+					<% if user_has_location %>
 					  <p style = "text-decoration: underline;">Select Your City:</p>
 				    <%= form_for @user do |f| %>
 				      <%= render partial: "city_form", locals: {f: f} %>
