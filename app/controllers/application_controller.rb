@@ -43,4 +43,19 @@ class ApplicationController < ActionController::Base
     current_user && @team.users.include?(current_user)
   end
   helper_method :user_on_team
+
+  def user_has_no_location
+    on_current_user_page && !@user.location
+  end
+  helper_method :user_has_no_location
+
+  def user_has_location
+    on_current_user_page && @user.location
+  end
+  helper_method :user_has_location
+
+  def on_current_user_page
+    current_user == @user
+  end
+  helper_method :on_current_user_page
 end
