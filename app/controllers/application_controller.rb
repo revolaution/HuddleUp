@@ -28,4 +28,19 @@ class ApplicationController < ActionController::Base
     current_user && current_user != game.creator && participating
   end
   helper_method :user_can_leave
+
+  def user_with_location
+    current_user && current_user.location
+  end
+  helper_method :user_with_location
+
+  def user_not_on_team
+    current_user && !@team.users.include?(current_user)
+  end
+  helper_method :user_not_on_team
+
+  def user_on_team
+    current_user && @team.users.include?(current_user)
+  end
+  helper_method :user_on_team
 end
