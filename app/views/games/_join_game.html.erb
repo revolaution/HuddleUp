@@ -1,4 +1,4 @@
-<% if current_user && game.not_full? && !game.participants.include?(current_user) %>
+<% if user_can_join(game) %>
   <%= form_for participant, url: location_sport_game_participatings_path(@location, @sport, @game) do |f| %>
     <%= button_tag(type: 'submit', class: "waves-effect waves-light btn deep-orange", onclick: "Materialize.toast('Joined game!', 4000, 'green')") do %>
       <i class="icon-ok icon-white"></i>Join Game

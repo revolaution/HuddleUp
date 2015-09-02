@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_creator_has_valid_teams
 
+  def user_can_join(game)
+    current_user && game.not_full? && !game.participants.include?(current_user)
+  end
+  helper_method :user_can_join
 end
