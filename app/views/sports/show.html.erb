@@ -6,7 +6,7 @@
           <h3><%= @sport.name %></h3>
         </div>
         <div class="center-align calendar">
-          <%= link_to '<i class="fa fa-angle-double-left"></i>'.html_safe, location_sport_path(@location, @sport, date: @date - 1.day) %></i>
+          <%= link_to '<i class="fa fa-angle-double-left"></i>'.html_safe, location_sport_path(@location, @sport, date: @date - 1.day) %>
           <%= @date_display %>
           <%= link_to '<i class="fa fa-angle-double-right"></i>'.html_safe, location_sport_path(@location, @sport, date: @date + 1.day) %>
         </div>
