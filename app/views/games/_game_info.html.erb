@@ -5,6 +5,6 @@
   <li><strong>Openings: </strong><%= @game.available_space %>
   <li><strong>Max Players: </strong><%= @game.max_number_of_participants %></li>
   <li><strong>Address: </strong><%= @game.address %></li>
-  <li><strong>Creator: </strong><%= link_to @game.creator.name, @game.creator %></li>
+  <li><strong>Creator: </strong><img src = "<%= @game.creator.image %>" class = "img-border"><%= link_to @game.creator.name, @game.creator %></li>
   <li><%= render partial: "participants", locals: {participants: @participants, game: @game} %></li>
 </ul>
